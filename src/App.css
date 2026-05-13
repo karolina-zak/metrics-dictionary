@@ -1,0 +1,63 @@
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --p1: #a32d2d;
+  --p2: #854f0b;
+  --p3: #185fa5;
+  --p4: #888780;
+  --p1-bg: #fcebeb;
+  --p2-bg: #faeeda;
+  --p3-bg: #e6f1fb;
+  --p4-bg: #f1efe8;
+  --p1-tx: #a32d2d;
+  --p2-tx: #854f0b;
+  --p3-tx: #185fa5;
+  --p4-tx: #5f5e5a;
+  --tag-red-bg: #fcebeb;
+  --tag-red-tx: #a32d2d;
+  --tag-amber-bg: #faeeda;
+  --tag-amber-tx: #854f0b;
+  --tag-green-bg: #eaf3de;
+  --tag-green-tx: #3b6d11;
+  --tag-blue-bg: #e6f1fb;
+  --tag-blue-tx: #185fa5;
+  --new-green: #0d6e55;
+  --why-bg: #fcebeb;
+  --why-border: #a32d2d;
+  --why-tx: #7b1f1f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.45;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

@@ -1,0 +1,388 @@
+[
+  {
+    "slug": "gmv",
+    "name": "Umsatz / GMV",
+    "tag": "Fehlt im Dashboard",
+    "formula": "GMV = Summe aller Bestellwerte (brutto)\nRevenue = GMV abzüglich Retouren, Stornos und Rabatte",
+    "description": "Die zentrale finanzielle Kennzahl: Sie beantwortet, ob die Website Umsatz erzeugt. GMV ist Brutto, Revenue ist Netto nach Retouren. Ohne sie beschreibt das Dashboard nur Verhalten, nicht Wirtschaftlichkeit. Für Mehrmarken-AGD sollten Sie nach Marke, Kategorie, Land und Kanal splitten.",
+    "example": "5.000 Bestellungen à 1.200 € ergeben GMV 6 Mio. €. Steigt die ATC-Rate um 2 %, sehen Sie ohne GMV nicht, ob mehr Umsatz entstand.",
+    "benchmark": "Beobachten: Gesamt-GMV, GMV nach Marke/Kategorie/Land, WoW- und YoY-Trends. Bei stark saisonalem AGD sind relative Veränderungen oft aussagekräftiger als Absolutwerte.",
+    "why": "Die einzige Kennzahl, die klar beantwortet, ob das Geschäft verdient. Verhaltens-KPIs allein reichen nicht, um UX- oder Marketinginvestitionen zu priorisieren."
+  },
+  {
+    "slug": "overall-cr",
+    "name": "Gesamt-Konversionsrate",
+    "tag": "Fehlt im Dashboard",
+    "formula": "CR = Anzahl Bestellungen ÷ Anzahl aller Besuche × 100",
+    "description": "Anteil der Besuche, die in einen Kauf münden – Endpunkt des gesamten Trichters (Traffic → Interesse → Warenkorb → Zahlung). Nicht verwechseln mit Kaufabsicht: hohe Absicht bei niedriger CR deutet auf Checkout- oder Angebotsprobleme.",
+    "example": "500.000 Besuche und 5.000 Bestellungen ergeben CR 1 %. Eine Verbesserung auf 1,2 % ohne mehr Traffic bringt 1.000 zusätzliche Bestellungen pro Monat.",
+    "benchmark": "AGD-E-Commerce: gut 1,5–3 %, mittel 0,8–1,5 %, schwach unter 0,8 %. Immer zusammen mit AOV und Traffic-Qualität lesen.",
+    "why": "Endnote des gesamten Funnels. Kaufabsicht im Dashboard misst Absicht, nicht Abschluss – ohne CR sehen Sie nicht, wo Kund:innen aussteigen."
+  },
+  {
+    "slug": "aov",
+    "name": "Durchschnittlicher Bestellwert (AOV)",
+    "tag": "Fehlt im Dashboard",
+    "formula": "AOV = Gesamtumsatz ÷ Anzahl Bestellungen",
+    "description": "Durchschnittlicher Warenkorbwert pro Bestellung. AOV steigt durch Cross-Sell, Upsell, Bundles und Zusatzleistungen (Montage, Garantie). Für UX: sichtbare Zusatzoptionen, klare Pakete und vertrauensbildende Preisdarstellung.",
+    "example": "Waschmaschine 600 € plus Montage 80 € plus Garantie 100 €: AOV steigt von 600 € auf 780 € – mehr Umsatz ohne neue Kund:innen.",
+    "benchmark": "AOV nach Kategorie, Gerät und Land vergleichen. Sinkt AOV bei steigender Bestellzahl, könnten günstigere Produkte oder Rabattaktionen dominieren.",
+    "why": "+10 % AOV bei gleicher Bestellzahl bringt +10 % Umsatz ohne zusätzliche Akquisekosten. Zusatzleistungs-Raten allein zeigen nicht den finanziellen Effekt."
+  },
+  {
+    "slug": "traffic-sources",
+    "name": "Traffic-Quellen",
+    "tag": "Fehlt im Dashboard",
+    "formula": "Kanalanteil = Besuche aus einem Kanal ÷ alle Besuche × 100",
+    "description": "Verteilung des Traffics auf organische Suche, bezahlte Suche, Direkt, E-Mail, Social, Referral und Display. Ohne diese Aufschlüsselung wirken Bounce oder CR irreführend – dieselbe Rate kann je nach Kanal völlig unterschiedlich interpretiert werden.",
+    "example": "Paid Search CR 0,5 % vs. E-Mail CR 4 %: E-Mail ist deutlich effizienter – ohne Quellenauflösung bleibt das unsichtbar.",
+    "benchmark": "Pro Kanal: Besuche, Bounce, CR, AOV und Umsatz. So priorisieren Sie Budgets und erkennen kanalspezifische UX-Schmerzpunkte.",
+    "why": "Jede Kennzahl braucht Kanal-Kontext. Ohne Traffic-Quellen wissen Sie nicht, wo Marketing und Produkt gezielt ansetzen müssen."
+  },
+  {
+    "slug": "cr-per-device",
+    "name": "Konversionsrate nach Gerät",
+    "tag": "Fehlt im Dashboard",
+    "formula": "CR pro Gerät = Bestellungen vom Gerät ÷ Besuche vom Gerät × 100",
+    "description": "Getrennte CR für Smartphone, Desktop und Tablet. Bei Großgeräten oft Recherche mobil und Kauf desktop – eine niedrige Mobile-CR kann trotzdem Teil eines gesunden Customer Journeys sein.",
+    "example": "Kampagne auf dem Handy gesehen, später am Desktop gekauft: Mobile-CR wirkt schwach, war aber Einstieg in den Trichter.",
+    "benchmark": "Typisch AGD: Mobil 0,5–1,2 %, Desktop 1,5–3,5 %, Tablet 1–2 %. Unter 0,5 % mobil: Checkout vereinfachen, Apple/Google Pay prüfen.",
+    "why": "Ohne Geräte-CR unterschätzen oder überbewerten Sie Mobile. Fehlinvestitionen in Kanäle oder falsche UX-Prioritäten sind die Folge."
+  },
+  {
+    "slug": "new-vs-returning-cr",
+    "name": "Konversionsrate: Neu vs. Wiederkehrend",
+    "tag": "Fehlt im Dashboard",
+    "formula": "CR Neu = Bestellungen Neukund:innen ÷ Besuche Neukund:innen × 100\nCR Wiederkehrend = Bestellungen Wiederkehrende ÷ Besuche Wiederkehrende × 100",
+    "description": "Vergleicht Kaufeffizienz erster Besuche mit wiederkehrenden Nutzer:innen. Entscheidend für Balance zwischen Akquise und Retention – besonders bei langen Entscheidungszyklen bei AGD.",
+    "example": "Neu 0,4 % (Recherche) vs. Wiederkehrend 3,2 % (Kaufentscheidung): Fokus auf E-Mail, Merkzettel und Loyalty lohnt sich.",
+    "benchmark": "Hohe CR bei Neuen: Akquise wirkt. Niedrig bei Neuen, hoch bei Wiederkehrenden: Remarketing ausbauen. Beides niedrig: Preis, Verfügbarkeit oder grundlegendes UX-Problem.",
+    "why": "Nur „Wiederkehrend-Rate“ ohne CR zeigt nicht, ob Rückkehrer kaufen. Strategie hängt davon ab, ob Retention oder Akquise der Hebel ist."
+  },
+  {
+    "slug": "cross-sell-upsell",
+    "name": "Cross-Sell- / Upsell-Rate",
+    "tag": "Fehlt im Dashboard",
+    "formula": "Cross-Sell = Bestellungen mit ≥2 Kategorien ÷ alle Bestellungen × 100\nUpsell = Bestellungen mit höherwertigem Modell ÷ alle Bestellungen × 100",
+    "description": "Cross-Sell verbindet Zubehör oder zweite Kategorie; Upsell führt zu einem höherwertigen Gerät. Zusatzleistungs-Anbindung im Dashboard deckt nur einen Teil ab – produktübergreifendes Cross-Sell fehlt oft.",
+    "example": "Geschirrspüler plus Salz und Tabs; oder Kühlschrank 400 l statt 500 l mit No-Frost für wenig Aufpreis – höhere AOV und Marge.",
+    "benchmark": "Cross-Sell häufig 10–30 %, Upsell 5–15 %. PDP-Module „Kunden kauften auch“, Bundles und Checkout-Upsell sind typische UX-Hebel."
+  },
+  {
+    "slug": "bounce-rate",
+    "name": "Bounce-Rate",
+    "tag": "Aktuell: 49,8 %",
+    "formula": "Besuche mit nur einer Seitenansicht ÷ alle Besuche × 100",
+    "description": "Anteil der Besuche mit nur einer Seite vor dem Verlassen. Nicht jeder Bounce ist negativ (z. B. Telefonnummer gefunden). Für AGD mit Paid/Preisvergleich sind 45–60 % oft normal.",
+    "example": "Bei viel Paid- und Vergleichstraffic sind 49,8 % unauffällig; dauerhaft über 65–70 % sollten Sie Landeseiten und Erwartungsmanagement prüfen.",
+    "benchmark": "Richtwert 45–60 % oft OK; >65 % kritisch; >75 % alarmierend. Immer mit Traffic-Quelle und Zielseite kombinieren.",
+    "why": "Jeder zweite Besuch endet nach einer Seite – mit Quellenanalyse finden Sie Kanäle oder Seiten, die abspringen lassen."
+  },
+  {
+    "slug": "time-per-visit",
+    "name": "Verweildauer pro Besuch",
+    "tag": "Aktuell: 369 Sek.",
+    "formula": "Gesamtzeit auf der Site ÷ Anzahl Besuche",
+    "description": "Durchschnittliche Verweildauer pro Besuch. Längere Sessions deuten auf stärkeres Informationsbedürfnis – typisch bei techniklastigen AGD-Käufen.",
+    "example": "369 Sekunden ≈ 6 Minuten: für AGD solide, weil Spezifikationen verglichen werden. Sehr kurz kann auf Ladezeiten oder schwache PDP-Inhalte hindeuten.",
+    "benchmark": ">5 Minuten oft positiv für AGD; unter 2 Minuten prüfen Sie Content-Tiefe und Performance gemeinsam mit Bounce."
+  },
+  {
+    "slug": "bounce-single-page",
+    "name": "Bounce-Rate (Einzelseitenbesuche)",
+    "tag": "Aktuell: 58 % (alt. Methode)",
+    "formula": "Einzelseiten-Sessions ÷ alle Sessions × 100",
+    "description": "Alternative Bounce-Definition auf Session-Basis. Wenn das Dashboard mehrere Bounce-Werte zeigt, entstehen in Stakeholder-Meetings widersprüchliche Antworten.",
+    "example": "Die Frage „Wie hoch ist unser Bounce?“ bekommt drei Zahlen – das verwirrt Entscheider:innen und erschwert Priorisierung.",
+    "benchmark": "Eine offizielle Definition für Reporting festlegen, andere als „alternativ“ kennzeichnen und in Tooltips die Messlogik erklären."
+  },
+  {
+    "slug": "feedback-intent",
+    "name": "Feedback-Intent-Aktivierungsrate",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche mit Klick im Feedback-Modul ÷ Besuche, die das Modul sahen × 100",
+    "description": "Misst, ob Nutzer:innen ein gezeigtes Feedback-Widget (z. B. NPS, Seitenbewertung) tatsächlich nutzen. Wichtig für UX Research und die Repräsentativität von Stimmen.",
+    "example": "Niedrige Rate: Widget wird ignoriert (Platzierung, Timing, visuelle Priorität). Hohe Rate: Feedback-System erreicht aktive Nutzer:innen.",
+    "benchmark": "Prüfen, ob nur extrem Zufriedene oder Unzufriedene antworten – sonst verzerrt die Kennzahl Produktentscheidungen."
+  },
+  {
+    "slug": "returning-visitors-rate",
+    "name": "Anteil wiederkehrender Besucher",
+    "tag": "Aktuell: Definition",
+    "formula": "Besucher mit >1 Besuch ÷ alle eindeutigen Besucher × 100",
+    "description": "Anteil wiederkehrender Nutzer:innen. Misst Gewohnheit und Markenbindung – bei AGD oft über Wochen bis zum Kauf.",
+    "example": "Hohe Rückkehrrate kann Retention signalisieren; ohne CR wissen Sie nicht, ob zurückgekehrt wird, um zu kaufen oder nur zu recherchieren.",
+    "benchmark": "Hohe Rückkehr bei niedriger CR: Recherche-Modus. Mit New-vs-Returning-CR zusammen auswerten."
+  },
+  {
+    "slug": "returning-registration-rate",
+    "name": "Registrierungsrate wiederkehrender Besucher",
+    "tag": "Aktuell: Definition",
+    "formula": "Registrierte Wiederkehrende ÷ alle Wiederkehrende × 100",
+    "description": "Anteil identifizierbarer wiederkehrender Nutzer:innen. Registrierung ermöglicht Personalisierung, E-Mail-Journeys und bessere Attribution.",
+    "example": "Viele anonyme Rückkehrer:innen erschweren gezielte Ansprache nach dem ersten Besuch.",
+    "benchmark": "Wenn Rückkehr hoch, Registrierung niedrig: Hürden im Formular, Nutzen des Kontos und Vertrauen prüfen."
+  },
+  {
+    "slug": "registration-after-first-visit",
+    "name": "Registrierungsrate nach erstem Besuch",
+    "tag": "Aktuell: Definition",
+    "formula": "Wiederkehrende, die sich nach dem 1. Besuch registrierten ÷ alle, die sich beim 1. Besuch nicht registrierten × 100",
+    "description": "Misst verzögerte Registrierung: Nutzer:innen registrieren sich erst, wenn der Mehrwert klar ist (Bestellverfolgung, schnellerer Checkout, exklusive Angebote).",
+    "example": "E-Mail 24–48 h nach erstem Besuch mit konkreten Kontovorteilen kann diese Rate heben.",
+    "benchmark": "Reminder-Flows und klare Value Props auf der Registrierungsseite testen."
+  },
+  {
+    "slug": "most-visited-categories",
+    "name": "Meistbesuchte Produktkategorien",
+    "tag": "Aktuell: Top 10",
+    "formula": "Besuche auf Kategorieseiten im Zeitraum",
+    "description": "Ranking stark besuchter Kategorien (z. B. Kühl-Gefrierkombis, Waschmaschinen). Steuert Content-, Performance- und Navigationsbudgets.",
+    "example": "Top-Kategorien verdienen die schnellsten PDPs, besten Filter und höchste inhaltliche Pflege.",
+    "benchmark": "Analytics-Namen sind oft technisch verkettet – in Präsentationen lesbare Labels verwenden."
+  },
+  {
+    "slug": "visits-by-device",
+    "name": "Besuche nach Gerätetyp",
+    "tag": "Aktuell: sichtbar",
+    "formula": "Besuche je Gerät ÷ alle Besuche × 100",
+    "description": "Verteilung auf Mobil, Desktop, Tablet usw. Wichtige UX-Frage: dominiert Mobil nur im Traffic oder auch im Umsatz?",
+    "example": "Ohne CR pro Gerät bleibt offen, ob Mobile nur Recherche oder auch Abschlusskanal ist.",
+    "benchmark": ">60 % mobil: Performance, Touch-Ziele, Checkout und Wallet-Zahlungen priorisieren."
+  },
+  {
+    "slug": "atc",
+    "name": "In-den-Warenkorb-Rate (ATC)",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche mit ≥1 In-den-Warenkorb ÷ alle Besuche × 100",
+    "description": "Erstes starkes Kaufsignal: vom Stöbern zur konkreten Kaufüberlegung. ATC korreliert stark mit späterer CR und Umsatz – idealer Frühindikator für Funnel- und PDP-Tests.",
+    "example": "AGD-Richtwert oft 3–8 %. Niedrig: ATC schwer findbar, Lagerbestände, Preis, schwache Medien oder Vertrauen auf der PDP.",
+    "benchmark": "Gemeinsam mit Warenkorbabbruch lesen: hohe ATC bei hohem Abbruch deutet auf Checkout-, Liefer- oder Zahlungsprobleme.",
+    "why": "Sinkt ATC, folgen oft CR und Revenue. Einstiegspunkt für alle Warenkorb- und Checkout-Kennzahlen."
+  },
+  {
+    "slug": "purchase-intent",
+    "name": "Kaufabsicht-Rate",
+    "tag": "Aktuell: Definition",
+    "formula": "(ATC + Händlersuche + Online kaufen + externer Händler-Klick) ÷ alle Besuche × 100",
+    "description": "Aggregiert mehrere Kaufsignale inkl. stationärer oder Partnerkanäle. Wenn Kaufabsicht deutlich über ATC liegt, kaufen viele lieber offline oder beim Partner.",
+    "example": "Split „Online kaufen“ vs. externer Händler zeigt, ob der eigene Shop im Preis- oder Convenience-Mix zurückliegt.",
+    "benchmark": "Mit Gesamt-CR vergleichen: große Lücke deutet auf Checkout- oder Fulfillment-Reibung.",
+    "why": "Zentral für Omnichannel-Strategie: Sie zeigt, ob digitale Absicht außerhalb des eigenen Warenkorbs landet."
+  },
+  {
+    "slug": "buy-online",
+    "name": "„Online kaufen“-Klickrate",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche mit Klick „Online kaufen“ ÷ alle Besuche × 100",
+    "description": "Direkte Absicht, im eigenen E-Commerce zu kaufen – ohne Umweg über Händlerstrecken. Trend ist oft wichtiger als Einzelwert.",
+    "example": "Steigt die Rate, gewinnt der Direktkanal im Vertriebsmix an Bedeutung.",
+    "benchmark": "Wenn externer Händler deutlich überwiegt, Preis, Lieferversprechen und Checkout-Reibung prüfen."
+  },
+  {
+    "slug": "external-retailer",
+    "name": "Klickrate externer Händler",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche mit Klick zu externem Händler ÷ alle Besuche × 100",
+    "description": "Misst Weiterleitungen zu Marktplätzen oder Partnern. Kann strategisch gewollt sein oder auf Wettbewerbsnachteile hinweisen.",
+    "example": "Hohe Rate: Kauf lieber beim Partner – prüfen Sie Margen, Verfügbarkeit und wahrgenommene Sicherheit.",
+    "benchmark": "Trend beobachten, um D2C-Strategie und Partnerprogramm zu kalibrieren."
+  },
+  {
+    "slug": "comparison-lift",
+    "name": "Konversions-Lift durch Vergleich",
+    "tag": "Aktuell: Definition",
+    "formula": "CR mit Vergleichstool − CR ohne Vergleich (Prozentpunkte)",
+    "description": "Misst, ob das Produktvergleichstool Kaufwahrscheinlichkeit erhöht. Hoher Lift kann auch Selektion bedeuten (schon entschlossene Nutzer:innen).",
+    "example": "+5 PP kann echte Entscheidungshilfe sein; ~0 PP kann bedeuten, dass nur Power-User das Tool nutzen.",
+    "benchmark": "Bei starkem Lift A/B-Test mit ausgeblendetem Tool zur Kausalsicherung erwägen."
+  },
+  {
+    "slug": "filter-sort-lift",
+    "name": "Konversions-Lift durch Filter/Sortierung",
+    "tag": "Aktuell: Definition",
+    "formula": "CR mit Filtern/Sortierung − CR ohne (Prozentpunkte)",
+    "description": "Zeigt, ob PLP-Filter die Auswahl erleichtern – bei großen Sortimenten zentral für UX und Findability.",
+    "example": "Nur 5 % nutzen Filter: Steuerung ist zu versteckt oder nicht verständlich beschriftet.",
+    "benchmark": "Meistgenutzte Filter (Energie, Preis, Marke, Volumen) analysieren und in der Informationsarchitektur priorisieren."
+  },
+  {
+    "slug": "competence-to-pdp",
+    "name": "CTR von Ratgeber zur PDP",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche von Ratgeber- zu Produktseite ÷ alle Ratgeber-Besuche × 100",
+    "description": "Misst, ob Ratgeber („Waschmaschine kaufen“) zu konkreten Produkten führt – Brücke zwischen Content und Commerce.",
+    "example": "Niedrige CTR: starke Texte, aber schwache CTAs oder fehlende Produktkarten im Fluss.",
+    "benchmark": "Gute Ratgeber haben SEO-Potenzial; hohe CTR rechtfertigt mehr Editorial-Invest."
+  },
+  {
+    "slug": "plp-to-pdp",
+    "name": "CTR von Produktliste zur PDP",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche von PLP zu PDP ÷ alle PLP-Besuche × 100",
+    "description": "Einstieg in den Produkttrichter. Ohne Klick aus der Liste folgen keine PDP-, ATC- oder Checkout-Schritte.",
+    "example": "Niedrig: zu viele Produkte ohne Sortierung, schwache Kacheln, fehlender Preis, langsame PLP.",
+    "benchmark": "Kachel-Layouts, Bildgrößen und Preissichtbarkeit per A/B-Tests optimieren.",
+    "why": "Ohne PLP-CTR stirbt der gesamte downstream-Funnel – Listing-UX ist der erste Hebel."
+  },
+  {
+    "slug": "product-discovery-success",
+    "name": "Produktfinder-Erfolgsrate",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit ATC oder ≥30 s Verweildauer ÷ alle PDP-Besuche × 100",
+    "description": "Kombiniert hartes Signal (ATC) mit softer Engagement-Zeit als Surrogat für echtes Interesse.",
+    "example": "Steigt die Rate ohne ATC-Anstieg, zögern Nutzer:innen vor Preis, Verfügbarkeit oder CTA.",
+    "benchmark": "Zwischen Kategorien vergleichen und schwache PDP-Muster identifizieren."
+  },
+  {
+    "slug": "pdp-to-atc",
+    "name": "PDP-zu-ATC-Rate",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit ≥1 ATC ÷ alle PDP-Besuche × 100",
+    "description": "Wichtigste PDP-Qualitätskennzahl: misst, ob die Produktseite zur Warenkorbentscheidung überzeugt. Hier gehen oft die meisten potenziellen Transaktionen verloren.",
+    "example": "AGD-Richtwert oft 5–15 %. Schwach bei schlechter Medienqualität, fehlendem Vertrauen, Preis oder Lagerstatus.",
+    "benchmark": "Nach Marke und Kategorie vergleichen – große Lücken zeigen inhaltliche oder Angebotsprobleme, nicht nur „Shop“.",
+    "why": "Direkter Hebel für Informationsarchitektur, Medien, Reviews und primäre Aktionen auf der PDP."
+  },
+  {
+    "slug": "media-engagement",
+    "name": "Medien-Engagement-Rate",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit Galerie-Interaktion (Klick, Scroll, Video) ÷ alle PDP-Besuche × 100",
+    "description": "Großgeräte online nicht anfassbar – Galerie und Video ersetzen das stationäre Erlebnis.",
+    "example": "Wenig Interaktion: zu wenige Bilder, kleine Darstellung, kein Zoom, Video unterhalb der Falz.",
+    "benchmark": "PDPs mit und ohne Video vergleichen; große ATC-Unterschiede rechtfertigen Medienproduktion."
+  },
+  {
+    "slug": "reviews-reading",
+    "name": "Rate „Bewertungen lesen“",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit Klick in Bewertungsbereich ÷ alle PDP-Besuche × 100",
+    "description": "Misst Bedarf an Social Proof vor dem Kauf. Hohe Rate bei wenigen Reviews blockiert oft den Abschluss.",
+    "example": "Wenn viele in Reviews klicken, aber <5 Bewertungen da sind, fehlt Vertrauensmaterial.",
+    "benchmark": "Post-Purchase-Urteilsbitten und strukturierte Review-UX ausbauen."
+  },
+  {
+    "slug": "technical-data-filtered",
+    "name": "Rate gefilterte technische Daten",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit Suche in technischen Daten ÷ Besuche, die Spezifikation öffneten × 100",
+    "description": "Hohe Nutzung der Spezifikationssuche deutet auf überladene Tabellen hin – Nutzer:innen suchen gezielt nach einem Parameter.",
+    "example": "Bei Waschmaschinen oft Kapazität, Energielabel, Schleuderdrehzahl – diese nach oben holen.",
+    "benchmark": "Häufig gesuchte Parameter priorisieren und Tabellen logisch gruppieren."
+  },
+  {
+    "slug": "document-download-pdp",
+    "name": "Dokumenten-Download-Rate auf der PDP",
+    "tag": "Aktuell: Definition",
+    "formula": "PDP-Besuche mit Dokumentdownload ÷ alle PDP-Besuche × 100",
+    "description": "Relevant für B2B, Installateur:innen und technisch tiefe Käufe (Energielabel, Datenblatt, CE).",
+    "example": "Hohe Downloads bei Einbaugeräten: professionelles Publikum – ggf. B2B-Ansicht erwägen.",
+    "benchmark": "Downloads prominent, aber nicht überladen platzieren."
+  },
+  {
+    "slug": "search-refinement",
+    "name": "Such-Verfeinerungsrate",
+    "tag": "Aktuell: 53,5 % — zu hoch!",
+    "formula": "Besuche mit Folgesuche ÷ alle Besuche mit Suche × 100",
+    "description": "Anteil, der nach der ersten Suche erneut sucht. >50 % deutet auf schwache Trefferqualität oder unklare Synonyme hin.",
+    "example": "53,5 % ist deutlich über dem Ziel <35 % – Top-Queries mit hoher Verfeinerung manuell bewerten.",
+    "benchmark": "Mit Search-to-PDP-CTR kombinieren: präzise Treffer, aber Nutzer:innen brauchen dennoch viele Versuche = Ranking/Recall-Thema.",
+    "why": "Schwache Suche senkt CR direkt; bei 0 % Nulltreffern liegt das Problem oft in Relevanz, nicht in leeren Ergebnissen."
+  },
+  {
+    "slug": "search-zero-results",
+    "name": "Such-Nulltreffer-Rate",
+    "tag": "Aktuell: 0,00 % — exzellent!",
+    "formula": "Suchen ohne Treffer ÷ alle Suchen × 100",
+    "description": "Anteil leerer Ergebnisse. 0 % kann exzellente NLP-Abdeckung oder ein Fallback bedeuten, der immer etwas zeigt.",
+    "example": "Prüfen, ob echte Trefferqualität oder „weiche“ Fallbacks die 0 % erklären.",
+    "benchmark": "<5 % gut, <2 % sehr gut; historische Nulltreffer-Queries dokumentieren."
+  },
+  {
+    "slug": "search-to-pdp-ctr",
+    "name": "Such-zu-PDP-CTR",
+    "tag": "Aktuell: 29,6 %",
+    "formula": "Besuche mit direktem Sprung von Suche zur PDP ÷ alle Suchbesuche × 100",
+    "description": "Misst, wie oft Suche direkt zu einem Produkt führt – Indikator für Trefferpräzision.",
+    "example": "~30 % direkte PDPs bei hoher Verfeinerung: Treffer sind oft passend, aber Nutzer:innen müssen trotzdem nachschärfen.",
+    "benchmark": "Steigende PDP-CTR bei sinkender Verfeinerung = messbare Suchverbesserung."
+  },
+  {
+    "slug": "error-to-intent",
+    "name": "Fehler-zur-Intent-Rate",
+    "tag": "KRITISCH",
+    "formula": "Besuche mit ATC und Warenkorbfehler ÷ alle ATC-Besuche × 100",
+    "description": "Technische Fehler blockieren den Kauf hart – nicht nur Friction, sondern Abbruch. Selbst 1–2 % sind bei Volumen massiver Umsatzverlust.",
+    "example": "1 Mio. Besuche, 5 % ATC = 50.000 Kaufsessions; 2 % Fehler = 1.000 verlorene Abschlusschancen.",
+    "benchmark": "Höchste Priorität: Monitoring, Geräte-Splits, Alerts >1 %.",
+    "why": "Einzige Kennzahl, bei der Bugs direkt Transaktionen verhindern – absoluter Fokus für Tech und QA."
+  },
+  {
+    "slug": "cart-abandonment",
+    "name": "Warenkorbabbruch-Rate",
+    "tag": "Aktuell: Definition",
+    "formula": "Besuche mit ATC ohne Kauf ÷ alle ATC-Besuche × 100",
+    "description": "Misst fast-Käufe, die nicht abgeschlossen werden. Bei AGD ist hoher Abbruch teils normal (Wunschliste, lange Entscheidung).",
+    "example": "70–85 % können bei Großgeräten üblich sein – alarmierend sind steigende Trends oder extreme Marken-Outliers.",
+    "benchmark": "Mit Fehler-zur-Intent-Rate trennen: bewusstes Verzögern vs. technischer Blocker.",
+    "why": "Jede abgebrochene ATC-Session war Kaufnähe – Ursachen (Checkout, Lieferung, Zahlung) gezielt qualitativ erforschen."
+  },
+  {
+    "slug": "additional-service-attach",
+    "name": "Zusatzleistungs-Anbindungsrate",
+    "tag": "Aktuell: Definition",
+    "formula": "Bestellungen mit ≥1 Zusatzleistung ÷ alle Bestellungen × 100",
+    "description": "Montage, Garantie, Entsorgung usw. haben oft höhere Margen als das Gerät – UX im Checkout entscheidet über Sichtbarkeit und Verständlichkeit.",
+    "example": "Wenn die Rate niedrig ist, sind Angebote oft zu spät, zu teuer oder unklar kommuniziert.",
+    "benchmark": "Mit AOV kombinieren und Checkout-Schritte auf Abbrüche bei Services prüfen.",
+    "why": "Hebel für Profitabilität ohne zusätzliche Akquise – Checkout-IA und Vertrauen sind zentrale Designaufgaben."
+  },
+  {
+    "slug": "return-after-atc",
+    "name": "Rückkehr nach ATC ohne Bestellung",
+    "tag": "Aktuell: Definition",
+    "formula": "ATC ohne Kauf, die zurückkehren ÷ alle ATC ohne Kauf × 100",
+    "description": "Misst warme Leads mit langer Entscheidung – typisch für AGD über mehrere Wochen.",
+    "example": "Hohe Rückkehr = großes Remarketing-Potenzial (E-Mail, Push, Retargeting).",
+    "benchmark": "7-Tage-Fenster oft wertvoll; Standard-Flow 1 h / 24 h / 7 Tage nach Abbruch testen.",
+    "why": "Zeigt, wie viele Kund:innen noch in der Kaufreise sind – ohne diese Kennzahl verschenken Sie Retargeting-Priorität."
+  },
+  {
+    "slug": "return-buy-after-atc",
+    "name": "Rückkehr und Kauf nach ATC ohne Bestellung",
+    "tag": "Aktuell: Definition",
+    "formula": "ATC ohne Kauf, später zurück und gekauft ÷ alle ATC ohne Kauf × 100",
+    "description": "Effektivität von Remarketing und Checkout-Fixes: Rückkehr ohne Kauf deutet auf neue Blocker (Preis, Lager, UX).",
+    "example": "Viele Rückkehrer, wenige Käufe: Preissprung, Lager oder neues Checkout-Problem prüfen.",
+    "benchmark": "Nach Checkout- oder CRM-Änderungen Trends beobachten.",
+    "why": "Verbindet Marketing-Maßnahmen mit tatsächlichem Recovery-Erfolg."
+  },
+  {
+    "slug": "cart-view-ratio",
+    "name": "Warenkorb-Ansichten pro Besucher",
+    "tag": "Aktuell: Definition",
+    "formula": "Gesamte Warenkorb-Ansichten ÷ eindeutige Besucher mit ATC",
+    "description": "Misst Zögern: viele Ansichten ohne Kauf deuten auf Preisvergleich, Warten auf Aktion oder Unsicherheit.",
+    "example": "Hohe Quote: Reminder mit klarem Nutzen und zeitlich begrenztem Anreiz testen.",
+    "benchmark": "Als Remarketing-Signal für heiße Leads nutzen."
+  },
+  {
+    "slug": "return-buy-same-visit",
+    "name": "Rückkehr und Kauf in derselben Session",
+    "tag": "Aktuell: komplexe Metrik",
+    "formula": "Wiederkehrende mit ATC ohne Kauf, die in derselben Rückkehr-Session kaufen ÷ alle Wiederkehrende × 100",
+    "description": "Unterscheidet sofortigen Abschluss nach Rückkehr von erneutem Stöbern ohne Kauf.",
+    "example": "Hohe Rate: Rückkehr ist starkes Kaufsignal – reduzierten Checkout oder „Willkommen zurück“-Banner testen.",
+    "benchmark": "Direktes Anzeigen des gespeicherten Warenkorbs nach Rückkehr kann die Rate heben."
+  },
+  {
+    "slug": "most-abandoned-products",
+    "name": "Meist abgebrochene Produkte (Tabelle)",
+    "tag": "Aktuell: sichtbar",
+    "formula": "Tabelle: Bestellungen | Cart Additions | Cart gap | Abbruchrate | Abbruchrate Produkt",
+    "description": "Top-SKUs mit hoher Lücke zwischen Adds und Orders. Zeigt konkrete UX- und Angebotsrisiken pro Produkt.",
+    "example": "500 Adds, 50 Orders → 90 % Abbruch: Preis, Verfügbarkeit, Reviews oder Bugs prüfen.",
+    "benchmark": "Action Plan: Wettbewerbspreis, Lager, Reviews, technische Fehler je SKU."
+  }
+]
