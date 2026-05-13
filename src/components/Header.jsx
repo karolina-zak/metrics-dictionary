@@ -1,86 +1,61 @@
+import LanguageSwitcher from "./LanguageSwitcher.jsx";
+
 const ctaBase = {
   display: "inline-flex",
   alignItems: "center",
-  gap: 6,
-  fontSize: 13,
-  fontWeight: 600,
-  padding: "8px 14px",
+  gap: "var(--ui-pill-gap)",
+  fontSize: "var(--ui-nav-font-size)",
+  fontWeight: "var(--ui-nav-font-weight)",
+  minHeight: 40,
+  padding: "var(--ui-pill-pad-block) var(--ui-pill-pad-inline)",
   borderRadius: "var(--radius-sm)",
   border: "1px solid var(--color-text)",
   whiteSpace: "nowrap",
 };
 
-const langBtn = {
-  padding: "6px 10px",
-  fontSize: 12,
-  fontWeight: 600,
-  cursor: "pointer",
-  border: "none",
-  borderRadius: "var(--radius-sm)",
-  background: "transparent",
-  color: "var(--color-text-muted)",
-};
-
-/** Delikatna separacja paska języka od treści nagłówka (nie „pusty” pasek). */
+/** Delikatna separacja paska języka od treści nagłówka (nie „pusty” pasek). — tylko wąski layout. */
 const LANG_ROW_SEPARATOR = "1px solid rgba(148, 163, 184, 0.45)";
 
-const LANG_FULL = { en: "English", pl: "Polski", de: "Deutsch" };
-
-export default function Header({ t, lang, setLang, dashboardHref }) {
+/**
+ * @param {{
+ *   t: Record<string, unknown>;
+ *   lang: string;
+ *   setLang: (l: string) => void;
+ *   dashboardHref: string | null;
+ *   showLangSwitcher?: boolean;
+ *   headerHeading: string;
+ *   headerSubtitle: string;
+ * }} props
+ */
+export default function Header({ t, lang, setLang, dashboardHref, showLangSwitcher = true, headerHeading, headerSubtitle }) {
   return (
-    <header
-      style={{
-        marginBottom: 20,
-        borderBottom: "1px solid var(--color-border)",
-      }}
-    >
-      {/* Sekcja 1: tylko język — prawy górny róg, linia pod spodem */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          paddingTop: 10,
-          paddingBottom: 10,
-          borderBottom: LANG_ROW_SEPARATOR,
-        }}
-      >
-        <div role="group" aria-label={t.langSwitcherLabel} style={{ display: "flex", alignItems: "center", gap: 2 }}>
-          {["en", "pl", "de"].map((l) => (
-            <button
-              key={l}
-              type="button"
-              lang={l}
-              aria-label={LANG_FULL[l]}
-              aria-pressed={lang === l}
-              onClick={() => setLang(l)}
-              style={{
-                ...langBtn,
-                background: lang === l ? "var(--color-bg)" : "transparent",
-                color: lang === l ? "var(--color-text)" : "var(--color-text-muted)",
-                boxShadow: lang === l ? "inset 0 0 0 1px var(--color-border-strong)" : "none",
-              }}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
+    <header className={`app-header-gallery ${showLangSwitcher ? "" : "app-header-gallery--rail"}`}>
+      {showLangSwitcher ? (
+        <div
+          className="app-header-gallery__lang-row"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            borderBottom: LANG_ROW_SEPARATOR,
+          }}
+        >
+          <LanguageSwitcher t={t} lang={lang} setLang={setLang} orientation="row" />
         </div>
-      </div>
+      ) : null}
 
-      {/* Sekcja 2: headline + opis (lewo), CTA (prawo), wyrównanie do góry */}
+      {/* Headline + opis (lewo), CTA (prawo) */}
       <div
         className="header-main-row"
         style={{
           display: "grid",
           gridTemplateColumns: "minmax(0, 1fr) auto",
-          gap: "16px 20px",
           alignItems: "start",
-          paddingTop: 16,
-          paddingBottom: 18,
         }}
       >
         <div style={{ minWidth: 0, textAlign: "left" }}>
           <h1
+            lang={lang}
             style={{
               margin: 0,
               fontSize: "clamp(1.2rem, 2.8vw, 1.55rem)",
@@ -89,18 +64,18 @@ export default function Header({ t, lang, setLang, dashboardHref }) {
               lineHeight: 1.2,
             }}
           >
-            {t.appTitle}
+            {headerHeading}
           </h1>
           <p
             style={{
-              margin: "8px 0 0",
+              margin: "clamp(10px, 2vw, 14px) 0 0",
               fontSize: 14,
               color: "var(--color-text-muted)",
-              lineHeight: 1.45,
+              lineHeight: 1.5,
               maxWidth: "62ch",
             }}
           >
-            {t.appSubtitle}
+            {headerSubtitle}
           </p>
         </div>
 
@@ -109,24 +84,32 @@ export default function Header({ t, lang, setLang, dashboardHref }) {
           style={{
             justifySelf: "end",
             flexShrink: 0,
-            paddingTop: 2,
+            paddingTop: "clamp(2px, 0.35vw, 6px)",
           }}
         >
           {dashboardHref ? (
-            <a
-              href={dashboardHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${t.openDashboard} — ${t.openDashboardAriaSuffix}`}
-              style={{
-                ...ctaBase,
-                textDecoration: "none",
-                background: "var(--color-text)",
-                color: "var(--color-surface)",
-              }}
-            >
-              {t.openDashboard} →
-            </a>
+            <div className="header-cta-dashboard">
+              <a
+                href={dashboardHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-describedby="hdr-dash-caption"
+                style={{
+                  ...ctaBase,
+                  textDecoration: "none",
+                  background: "var(--color-text)",
+                  color: "var(--color-surface)",
+                }}
+              >
+                {t.openDashboard}
+                <span aria-hidden="true"> ↗</span>
+              </a>
+              <p id="hdr-dash-caption" className="header-dashboard-caption">
+                {"openDashboardContext" in t && typeof t.openDashboardContext === "string"
+                  ? t.openDashboardContext
+                  : null}
+              </p>
+            </div>
           ) : (
             <button
               type="button"
@@ -142,7 +125,8 @@ export default function Header({ t, lang, setLang, dashboardHref }) {
                 borderColor: "var(--color-border-strong)",
               }}
             >
-              {t.openDashboard} →
+              {t.openDashboard}
+              <span aria-hidden="true"> ↗</span>
             </button>
           )}
         </div>

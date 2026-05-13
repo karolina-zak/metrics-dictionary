@@ -59,16 +59,16 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
         borderLeft: leftBorder,
         borderRadius: "var(--radius-md)",
         padding: "18px 20px",
-        marginBottom: 12,
+        marginBottom: "clamp(10px, 1.85vw, 18px)",
       }}
     >
       {/* Flat mode: section breadcrumb label with stronger visual treatment */}
       {flatMode && sectionTitle && (
         <div
           style={{
-            fontSize: 11,
+            fontSize: "var(--ui-caps-label-font-size)",
             fontWeight: 700,
-            letterSpacing: "0.06em",
+            letterSpacing: "var(--ui-caps-label-tracking)",
             textTransform: "uppercase",
             color: "var(--color-text)",
             borderLeft: "3px solid var(--color-border-strong)",
@@ -88,7 +88,7 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
             href={`#metric-${metric.id}`}
             aria-label={`${t.permalinkAria}: ${metric.name[lang]}`}
             style={{
-              fontSize: 12,
+              fontSize: "var(--ui-body-secondary-size)",
               color: "var(--color-text-muted)",
               textDecoration: "none",
               flexShrink: 0,
@@ -102,9 +102,9 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
           <span
             style={{
-              fontSize: 10,
+              fontSize: "var(--ui-tag-font-size)",
               fontWeight: 700,
-              padding: "2px 8px",
+              padding: "var(--ui-tag-pad-block) var(--ui-tag-pad-inline)",
               borderRadius: "var(--radius-pill)",
               background: PRIORITY_BG[metric.priority],
               color: PRIORITY_TX[metric.priority],
@@ -148,9 +148,9 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
         >
           <div
             style={{
-              fontSize: 11,
+              fontSize: "var(--ui-caps-label-font-size)",
               fontWeight: 700,
-              letterSpacing: "0.05em",
+              letterSpacing: "var(--ui-caps-label-tracking)",
               textTransform: "uppercase",
               color: "var(--color-text-muted)",
               marginBottom: 6,
@@ -161,12 +161,12 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
           {field === "formula" ? (
             <div
               style={{
-                fontSize: 12,
+                fontSize: "var(--ui-field-font-size)",
                 color: "var(--p3)",
                 fontFamily: "var(--font-mono)",
                 background: "var(--color-bg)",
                 borderRadius: "var(--radius-sm)",
-                padding: "10px 12px",
+                padding: "var(--ui-field-pad-block) var(--ui-field-pad-inline)",
                 lineHeight: 1.6,
                 whiteSpace: "pre-wrap",
               }}
@@ -176,11 +176,11 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
           ) : field === "benchmark" ? (
             <div
               style={{
-                fontSize: 13,
+                fontSize: "var(--ui-field-font-size)",
                 color: "var(--color-text)",
                 background: "var(--color-bg)",
                 borderRadius: "var(--radius-sm)",
-                padding: "10px 12px",
+                padding: "var(--ui-field-pad-block) var(--ui-field-pad-inline)",
                 lineHeight: 1.65,
               }}
             >
@@ -189,7 +189,7 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
           ) : field === "example" ? (
             <div
               style={{
-                fontSize: 13,
+                fontSize: "var(--ui-field-font-size)",
                 color: "var(--color-text-muted)",
                 borderLeft: "3px solid var(--color-border-strong)",
                 paddingLeft: 12,
@@ -199,7 +199,7 @@ export default function MetricCard({ metric, lang, t, sectionTitle, flatMode, hi
               <Highlight text={metric[field][lang]} q={q} />
             </div>
           ) : (
-            <p style={{ margin: 0, fontSize: 13, color: "var(--color-text-muted)", lineHeight: 1.65 }}>
+            <p style={{ margin: 0, fontSize: "var(--ui-field-font-size)", color: "var(--color-text-muted)", lineHeight: 1.65 }}>
               <Highlight text={metric[field][lang]} q={q} />
             </p>
           )}

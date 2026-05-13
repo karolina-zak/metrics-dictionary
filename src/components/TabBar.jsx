@@ -1,9 +1,29 @@
 import { useCallback, useEffect, useRef } from "react";
+import { categoryTabIconLigature } from "../categoryTabIcons";
 
 /**
- * @param {{ tabs: { id: string; label: string; count: number }[]; activeTab: string; onSelect: (id: string) => void; t: Record<string, string> }} props
+ * @param {{
+ *   tabs: { id: string; label: string; count: number }[];
+ *   activeTab: string;
+ *   onSelect: (id: string) => void;
+ *   t: Record<string, string>;
+ *   orientation?: "horizontal" | "vertical";
+ *   listId?: string;
+ *   hideSupportingText?: boolean;
+ * }} props
+ *
+ * hideSupportingText: sidebar “minimized” — same rail padding/radius; only hides visible labels + counts (icon + aria-label stay).
  */
-export default function TabBar({ tabs, activeTab, onSelect, t }) {
+export default function TabBar({
+  tabs,
+  activeTab,
+  onSelect,
+  t,
+  orientation = "horizontal",
+  listId,
+  hideSupportingText = false,
+}) {
+  const vertical = orientation === "vertical";
   const tabRefs = useRef(/** @type {(HTMLButtonElement | null)[]} */ ([]));
 
   useEffect(() => {
@@ -46,19 +66,62 @@ export default function TabBar({ tabs, activeTab, onSelect, t }) {
         selectByIndex(len - 1);
       }
     },
-    [tabs, selectByIndex],
+    [selectByIndex],
   );
+
+  const tablistOverflow = vertical
+    ? { overflowY: "auto", overflowX: "hidden", WebkitOverflowScrolling: "touch" }
+    : { overflowX: "auto", overflowY: "hidden", WebkitOverflowScrolling: "touch" };
+
+  const tablistStyle = {
+    gap: "var(--ui-pill-stack-gap)",
+    marginTop: vertical ? 0 : "clamp(12px, 2.2vw, 22px)",
+    paddingBottom: vertical ? 0 : 4,
+    ...tablistOverflow,
+    ...(vertical
+      ? {
+          display: "grid",
+          gridTemplateColumns: "max-content",
+          justifyItems: "stretch",
+          justifyContent: "start",
+          width: "100%",
+        }
+      : {
+          display: "flex",
+          flexWrap: "nowrap",
+          flexDirection: "row",
+        }),
+  };
 
   return (
     <div
+      id={listId}
       role="tablist"
       aria-label={t.metricsTabsLabel}
-      className="tabbar-scroll"
-      style={{ display: "flex", flexWrap: "nowrap", overflowX: "auto", gap: 6, marginTop: 14, paddingBottom: 4, WebkitOverflowScrolling: "touch" }}
+      className={vertical ? "tabbar-scroll-vertical" : "tabbar-scroll"}
+      style={tablistStyle}
     >
       {tabs.map((tab, index) => {
         const isOn = activeTab === tab.id;
         const tabId = `tab-${tab.id}`;
+        const iconGlyph = categoryTabIconLigature(tab.id);
+        const hoverTip = `${tab.label} (${tab.count})`;
+        const railTab = vertical;
+        const countMarginLeft = railTab && !hideSupportingText ? "auto" : undefined;
+        const countBg = isOn
+          ? railTab
+            ? "var(--color-tab-count-bg-selected)"
+            : "rgba(255,255,255,0.2)"
+          : railTab
+            ? "var(--color-tab-count-bg)"
+            : "rgba(100,116,139,0.15)";
+        const countColor =
+          railTab && !hideSupportingText
+            ? "var(--color-text-muted)"
+            : isOn
+              ? "inherit"
+              : "var(--color-text-muted)";
+
         return (
           <button
             key={tab.id}
@@ -71,37 +134,83 @@ export default function TabBar({ tabs, activeTab, onSelect, t }) {
             aria-selected={isOn}
             aria-controls="metrics-tabpanel"
             tabIndex={isOn ? 0 : -1}
+            title={hideSupportingText ? hoverTip : undefined}
             onClick={() => onSelect(tab.id)}
             onKeyDown={(e) => onTabKeyDown(e, index)}
             aria-label={`${tab.label}, ${tab.count}`}
             style={{
-              fontSize: 12,
-              fontWeight: 600,
-              padding: "6px 12px",
-              borderRadius: "var(--radius-pill)",
+              fontSize: "var(--ui-nav-font-size)",
+              fontWeight: "var(--ui-nav-font-weight)",
+              padding: railTab ? "var(--ui-sidebar-tab-pad)" : "var(--ui-pill-pad-block) var(--ui-pill-pad-inline)",
+              borderRadius: railTab ? "var(--radius-sm)" : "var(--radius-pill)",
               cursor: "pointer",
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
-              gap: 6,
+              gap: hideSupportingText ? 0 : "var(--ui-pill-gap)",
               whiteSpace: "nowrap",
-              border: isOn ? "1px solid var(--color-text)" : "1px solid var(--color-border-strong)",
-              background: isOn ? "var(--color-text)" : "transparent",
-              color: isOn ? "var(--color-surface)" : "var(--color-text)",
+              minHeight: 36,
+              width: railTab ? "100%" : undefined,
+              maxWidth: railTab ? "100%" : undefined,
+              minWidth: railTab && !hideSupportingText ? 0 : undefined,
+              boxSizing: "border-box",
+              justifyContent: railTab ? "flex-start" : undefined,
+              ...(railTab
+                ? {
+                    border: isOn ? "1px solid var(--color-tab-selected-border)" : "1px solid var(--color-border-strong)",
+                    background: isOn ? "var(--color-tab-selected-bg)" : "transparent",
+                    color: "var(--color-text)",
+                  }
+                : {
+                    border: isOn ? "1px solid var(--color-text)" : "1px solid var(--color-border-strong)",
+                    background: isOn ? "var(--color-text)" : "transparent",
+                    color: isOn ? "var(--color-surface)" : "var(--color-text)",
+                  }),
             }}
           >
-            <span aria-hidden="true">{tab.label}</span>
-            <span
-              aria-hidden="true"
-              style={{
-                fontSize: 11,
-                padding: "1px 7px",
-                borderRadius: "var(--radius-pill)",
-                background: isOn ? "rgba(255,255,255,0.2)" : "rgba(100,116,139,0.15)",
-                color: isOn ? "inherit" : "var(--color-text-muted)",
-              }}
-            >
-              {tab.count}
-            </span>
+            {iconGlyph ? (
+              <span
+                className="material-symbols-outlined tab-category-icon"
+                aria-hidden="true"
+                style={hideSupportingText ? { fontSize: 22 } : undefined}
+              >
+                {iconGlyph}
+              </span>
+            ) : null}
+            {!hideSupportingText ? (
+              <>
+                <span
+                  aria-hidden="true"
+                  style={
+                    vertical
+                      ? {
+                          flex: "1 1 auto",
+                          minWidth: 0,
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          textAlign: "left",
+                        }
+                      : undefined
+                  }
+                >
+                  {tab.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontSize: "var(--ui-micro-pill-font-size)",
+                    fontWeight: 600,
+                    padding: "var(--ui-micro-pill-pad-block) var(--ui-micro-pill-pad-inline)",
+                    borderRadius: "var(--radius-sm)",
+                    background: countBg,
+                    color: countColor,
+                    flexShrink: 0,
+                    marginLeft: countMarginLeft,
+                  }}
+                >
+                  {tab.count}
+                </span>
+              </>
+            ) : null}
           </button>
         );
       })}

@@ -1,26 +1,25 @@
-/** Bottom spacing matches section heading rhythm (see section h2 margin-top in App). */
-const FOOTER_BOTTOM = 22;
+/** Bottom rhythm (reference gallery generous section breaks) */
 
 export default function Footer({ badgeText, t }) {
   return (
     <footer
       className="app-footer"
       style={{
-        marginTop: 22,
-        paddingTop: 16,
-        paddingBottom: FOOTER_BOTTOM,
+        marginTop: "clamp(20px, 3.5vw, 36px)",
+        paddingTop: "clamp(14px, 2.25vw, 22px)",
+        paddingBottom: "clamp(18px, 2.75vw, 28px)",
         borderTop: "1px solid var(--color-border)",
-        fontSize: 12,
+        fontSize: "var(--ui-body-secondary-size)",
         color: "var(--color-text-muted)",
         lineHeight: 1.5,
       }}
     >
       {badgeText}
-      <div style={{ marginTop: 6 }}>
+      <div style={{ marginTop: "clamp(8px, 1.25vw, 12px)" }}>
         <a
           href="#abbreviations"
           style={{
-            fontSize: 12,
+            fontSize: "var(--ui-body-secondary-size)",
             color: "var(--color-text-muted)",
             textDecoration: "underline",
             textUnderlineOffset: 2,

@@ -62,6 +62,8 @@ export const TX = {
     appTitle: "UX Metrics Dictionary",
     appSubtitle: "Adobe Analytics workspace — definitions for designers",
     openDashboard: "Open Dashboard",
+    openDashboardContext:
+      "Internal Adobe Analytics workspace in your organization. Opens in a new browser tab.",
     openDashboardUnavailable:
       "Dashboard link is not configured. Set dashboardUrl in App.jsx (must be a valid https URL).",
     openDashboardAriaSuffix: "opens in a new tab",
@@ -69,11 +71,15 @@ export const TX = {
     browserTabTitle: "UX Metrics Dictionary — Adobe Analytics",
     searchLabel: "Search metrics",
     metricsTabsLabel: "Categories",
+    sidebarCollapseAria: "Collapse categories sidebar",
+    sidebarExpandAria: "Expand categories sidebar",
     categoriesHeading: "Categories:",
     categoriesHelp:
       "The tabs (All, Business KPIs, Engagement, …) choose which category of metrics you browse. The importance filter above narrows the list within that category, or across every metric when All is selected.",
     priorityFilterLabel: "Filter by importance level",
     langSwitcherLabel: "Interface language",
+    langPressToCycle:
+      "Change interface language. Current language: {{lang}}. Activate to rotate English, Polski, Deutsch.",
     resultsLive1: "1 metric matches your current filters.",
     resultsLiveN: "{{count}} metrics match your current filters.",
     flatResultsHeading: "Filtered metrics",
@@ -123,11 +129,34 @@ export const TX = {
       3: "Conversion & UX — tuning listings, PDPs, search, and journeys to lift conversion.",
       4: "Context — supporting signals (devices, segments, secondary reads).",
     },
+    headerBrowseAllTitle: "Browse All UX Metrics",
+    headerBrowseAllSubtitle:
+      "The full catalogue in one place — use search and importance filters below. Pick a category in the sidebar when you want to focus (business KPIs, engagement, checkout, and more).",
+    sectionHeaderDesc: {
+      business:
+        "Core ecommerce KPIs: revenue, GMV, conversion rate, AOV, and how traffic splits by source and device.",
+      engagement:
+        "How visitors use your pages — bounce, time on site, and early signals before a purchase.",
+      users:
+        "Who visits: new vs returning, registration paths, categories they reach, and device mix.",
+      discovery:
+        "From listing to product page: add-to-cart, purchase intent, comparison tools, filters, and navigation quality.",
+      pdp:
+        "Product-detail behaviour — specs, reviews, media and docs — whatever builds confidence to buy.",
+      search:
+        "On-site search: refinements, zero-result queries, click-through to product pages, and recovery after queries that fail.",
+      cart:
+        "Basket dynamics: abandonment, journeys back from add-to-cart, attach rates, and the hand-off toward checkout.",
+      checkout:
+        "Payment flow steps, friction points, validation errors, and completion — where revenue closes or slips away.",
+    },
   },
   pl: {
     appTitle: "Słownik metryk UX",
     appSubtitle: "Workspace Adobe Analytics — definicje dla designerów",
     openDashboard: "Otwórz dashboard",
+    openDashboardContext:
+      "Wewnętrzny workspace Adobe Analytics w Twojej organizacji. Otwiera się w nowej karcie przeglądarki.",
     openDashboardUnavailable:
       "Link do dashboardu nie jest skonfigurowany. Ustaw dashboardUrl w App.jsx (prawidłowy adres https).",
     openDashboardAriaSuffix: "otwiera się w nowej karcie",
@@ -135,11 +164,15 @@ export const TX = {
     browserTabTitle: "Słownik metryk UX — Adobe Analytics",
     searchLabel: "Szukaj metryki",
     metricsTabsLabel: "Kategorie",
+    sidebarCollapseAria: "Zwiń panel kategorii",
+    sidebarExpandAria: "Rozwiń panel kategorii",
     categoriesHeading: "Kategorie:",
     categoriesHelp:
       "Zakładki (Wszystkie, Biznesowe KPI, Zaangażowanie itd.) wybierają kategorię metryk. Filtr ważności powyżej zawęża listę w obrębie tej kategorii albo we wszystkich metrykach, gdy aktywne jest Wszystkie.",
     priorityFilterLabel: "Filtr wg poziomu ważności",
     langSwitcherLabel: "Język interfejsu",
+    langPressToCycle:
+      "Zmień język interfejsu. Aktualnie: {{lang}}. Aktywuj kolejny język w kolejności English, Polski, Deutsch.",
     resultsLive1: "1 metryka pasuje do bieżących filtrów.",
     resultsLiveN: "Pasujące metryki: {{count}}.",
     flatResultsHeading: "Przefiltrowane metryki",
@@ -189,11 +222,34 @@ export const TX = {
       3: "Konwersja i UX — tuning listingu, PDP, wyszukiwarki i ścieżek pod konwersję.",
       4: "Kontekstowa — sygnały wspierające (np. urządzenie, segment, drugorzędne odczyty).",
     },
+    headerBrowseAllTitle: "Przeglądaj wszystkie metryki UX",
+    headerBrowseAllSubtitle:
+      "Cały katalog w jednym widoku — poniżej wyszukiwarka i filtr ważności. Wybierz kategorię w panelu bocznym, gdy chcesz się skupić (biznes, zaangażowanie, checkout itd.).",
+    sectionHeaderDesc: {
+      business:
+        "Kluczowe KPI e‑commerce: przychód, GMV, konwersja, AOV oraz podział ruchu według źródła i urządzenia.",
+      engagement:
+        "Jak użytkownicy korzystają ze stron — bounce, czas wizyty i sygnały przed decyzją o zakupie.",
+      users:
+        "Kto przychodzi: nowi i powracający, ścieżka rejestracji, kategorie oraz mix urządzeń.",
+      discovery:
+        "Od listingu do karty produktu: dodanie do koszyka, intencja zakupu, narzędzia porównań, filtry i jakość nawigacji.",
+      pdp:
+        "Zachowanie na PDP — parametry, opinie, media i materiały — co buduje pewność przed zakupem.",
+      search:
+        "Wyszukiwanie w serwisie: doprecyzowania zapytania, zero wyników, przejścia do PDP i co dzieje się po błędzie.",
+      cart:
+        "Koszyk: porzucenia, powroty po dodaniu do koszyka, dopasowanie usług i przejście w stronę checkoutu.",
+      checkout:
+        "Przepływ płatności: kroki lejka, punkty tarcia, błędy formularzy i finalizacja — tu domyka się przychód.",
+    },
   },
   de: {
     appTitle: "UX-Metrik-Lexikon",
     appSubtitle: "Adobe Analytics Workspace — Definitionen für Designer:innen",
     openDashboard: "Dashboard öffnen",
+    openDashboardContext:
+      "Internes Adobe-Analytics-Dashboard Ihrer Organisation (Workspace). Öffnet in einem neuen Browser-Tab.",
     openDashboardUnavailable:
       "Dashboard-Link nicht konfiguriert. dashboardUrl in App.jsx setzen (gültige https-URL).",
     openDashboardAriaSuffix: "öffnet in neuem Tab",
@@ -201,11 +257,15 @@ export const TX = {
     browserTabTitle: "UX-Metrik-Lexikon — Adobe Analytics",
     searchLabel: "Metriken durchsuchen",
     metricsTabsLabel: "Kategorien",
+    sidebarCollapseAria: "Kategorie-Seitenleiste einklappen",
+    sidebarExpandAria: "Kategorie-Seitenleiste ausklappen",
     categoriesHeading: "Kategorien:",
     categoriesHelp:
       "Die Tabs (Alle, Business-KPIs, Engagement, …) wählen die Metrik-Kategorie. Der Wichtigkeits-Filter darüber grenzt die Anzeige innerhalb dieser Kategorie ein — oder über alle Metriken, wenn „Alle“ gewählt ist.",
     priorityFilterLabel: "Nach Wichtigkeitsstufe filtern",
     langSwitcherLabel: "Sprache der Oberfläche",
+    langPressToCycle:
+      "Oberflächensprache wechseln. Aktuell: {{lang}}. Klick wechselt nacheinander English, Polski, Deutsch.",
     resultsLive1: "1 Metrik entspricht den aktuellen Filtern.",
     resultsLiveN: "{{count}} Metriken entsprechen den aktuellen Filtern.",
     flatResultsHeading: "Gefilterte Metriken",
@@ -254,6 +314,27 @@ export const TX = {
       2: "Wichtig — erklärt Ursachen im Trichter oder Checkout (Diagnose).",
       3: "Conversion & UX — Listing, PDP, Suche und Customer Journey für mehr Abschluss optimieren.",
       4: "Kontext — unterstützende Signale (Gerät, Segment, sekundäre Lesarten).",
+    },
+    headerBrowseAllTitle: "Alle UX-Metriken durchsuchen",
+    headerBrowseAllSubtitle:
+      "Das gesamte Lexikon hier — darunter Suche und Wichtigkeitsfilter. Wählen Sie in der Sidebar eine Kategorie, wenn Sie fokussieren wollen (Business, Engagement, Checkout usw.).",
+    sectionHeaderDesc: {
+      business:
+        "Kerne-Commerce-KPIs: Umsatz, GMV, Konversionsrate, AOV sowie Traffic nach Herkunft und Gerät.",
+      engagement:
+        "Nutzung der Seiten - Absprünge, Verweildauer und frühe Signale vor der Kaufentscheidung.",
+      users:
+        "Wer zu Ihnen kommt: Neu vs. Wiederkehrende, Registrierungspfad, Kategorien-Reichweite und Gerätemix.",
+      discovery:
+        "Vom Listing zur PDP: Warenkorb, Kaufabsicht, Vergleich, Filter und Navigationsqualität.",
+      pdp:
+        "Detailseitenverhalten — Daten, Bewertungen, Medien, Downloads — Vertrauen vor dem Abschluss.",
+      search:
+        "On-site-Suche: Verfeinerung, keine Treffer, CTR zur PDP und was nach fehlerhaften Suchen passiert.",
+      cart:
+        "Warenkorb: Abbrechen, Rückkehren nach ATC, Attach-Rates und Übergang in den Checkout.",
+      checkout:
+        "Checkout-Schritte, Friktion, Validierung und Completion — dort wird Umsatz abgeschlossen oder verloren.",
     },
   },
 };

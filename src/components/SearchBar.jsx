@@ -2,7 +2,7 @@ export default function SearchBar({ id, label, value, onChange, placeholder, t }
   const hasValue = value.length > 0;
 
   return (
-    <div style={{ marginTop: 4 }}>
+    <div style={{ marginTop: "clamp(12px, 2.2vw, 22px)" }}>
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
@@ -18,8 +18,11 @@ export default function SearchBar({ id, label, value, onChange, placeholder, t }
           spellCheck="false"
           style={{
             width: "100%",
-            padding: hasValue ? "10px 40px 10px 12px" : "10px 12px",
-            fontSize: 14,
+            minHeight: 42,
+            padding: hasValue
+              ? "var(--ui-field-pad-block) 40px var(--ui-field-pad-block) var(--ui-field-pad-inline)"
+              : "var(--ui-field-pad-block) var(--ui-field-pad-inline)",
+            fontSize: "var(--ui-field-font-size)",
             borderRadius: "var(--radius-sm)",
             border: "1px solid var(--color-border-strong)",
             background: "var(--color-surface)",
@@ -52,10 +55,10 @@ export default function SearchBar({ id, label, value, onChange, placeholder, t }
       </div>
       <p
         style={{
-          margin: "4px 0 0",
-          fontSize: 11,
+          margin: "6px 0 0",
+          fontSize: "var(--ui-body-secondary-size)",
           color: "var(--color-text-muted)",
-          lineHeight: 1.4,
+          lineHeight: 1.45,
         }}
       >
         {t.searchHint}
