@@ -11,26 +11,26 @@
   --radius-md: 12px;
   --radius-pill: 999px;
   --p1: #a32d2d;
-  --p2: #854f0b;
+  /* P2: amber/yellow family — text meets ~4.5:1 on light yellow (WCAG AA for body-like UI copy) */
+  --p2: #92400e;
   --p3: #185fa5;
   --p4: #888780;
   --p1-bg: #fcebeb;
-  --p2-bg: #faeeda;
+  --p2-bg: #fffbeb;
   --p3-bg: #e6f1fb;
   --p4-bg: #f1efe8;
   --p1-tx: #a32d2d;
-  --p2-tx: #854f0b;
+  --p2-tx: #78350f;
   --p3-tx: #185fa5;
   --p4-tx: #5f5e5a;
   --tag-red-bg: #fcebeb;
   --tag-red-tx: #a32d2d;
-  --tag-amber-bg: #faeeda;
-  --tag-amber-tx: #854f0b;
+  --tag-amber-bg: #fffbeb;
+  --tag-amber-tx: #78350f;
   --tag-green-bg: #eaf3de;
   --tag-green-tx: #3b6d11;
   --tag-blue-bg: #e6f1fb;
   --tag-blue-tx: #185fa5;
-  --new-green: #0d6e55;
   --why-bg: #fcebeb;
   --why-border: #a32d2d;
   --why-tx: #7b1f1f;
@@ -60,4 +60,112 @@ a {
 
 button {
   font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: none;
+}
+
+.skip-link:focus-visible {
+  outline: 3px solid var(--p3);
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--p3);
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+input:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+#main-content:focus {
+  outline: 3px solid var(--p3);
+  outline-offset: 4px;
+}
+
+.app-footer {
+  background: transparent;
+  outline: none;
+}
+
+@media (max-width: 560px) {
+  .header-main-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-cta-wrap {
+    justify-self: start !important;
+  }
+}
+
+/* Hide scrollbars on filter chips and tab bar while keeping scroll functionality */
+.filter-chips-scroll::-webkit-scrollbar,
+.tabbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chips-scroll,
+.tabbar-scroll {
+  scrollbar-width: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+    --color-border-strong: #475569;
+    --p1-bg: #3b0f0f;
+    --p2-bg: #2d1a00;
+    --p3-bg: #0d2340;
+    --p4-bg: #1e2430;
+    --why-bg: #3b0f0f;
+  }
 }

@@ -50,11 +50,11 @@ In `src/App.jsx`, edit:
 ```javascript
 const APP_CONFIG = {
   // ...
-  dashboardUrl: "DASHBOARD_URL_PLACEHOLDER",
+  dashboardUrl: "https://experience.adobe.com/…/workspace/edit/…",
 };
 ```
 
-Replace `DASHBOARD_URL_PLACEHOLDER` with your real Adobe Analytics (or workspace) URL. The **Open Dashboard** button opens it in a new tab.
+Use your real Adobe Analytics or workspace URL. If the value is missing, invalid, or still contains `DASHBOARD_URL_PLACEHOLDER`, the **Open Dashboard** control is disabled and a tooltip explains how to fix it.
 
 ## Project structure (high level)
 

@@ -15,33 +15,33 @@
 export const METRIC_SECTIONS = [
   {
     "id": "business",
-    "isNew": true,
+    "isNew": false,
     "label": {
       "en": "Business KPIs",
       "pl": "Biznesowe KPI",
       "de": "Business-KPIs"
     },
     "title": {
-      "en": "Missing Business KPIs",
-      "pl": "Brakujące KPI Biznesowe",
-      "de": "Fehlende Business-KPIs"
+      "en": "Business KPIs",
+      "pl": "Business KPIs",
+      "de": "Business-KPIs"
     },
     "metrics": [
       {
         "id": "gmv",
         "priority": 1,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Revenue / GMV",
           "pl": "Revenue / GMV",
           "de": "Umsatz / GMV"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
           "en": "The only metric answering 'is the business making money?'. All others (ATC rate, bounce, CTR) describe behaviour — without GMV and Revenue you cannot tell if the site generates income or evaluate any optimisation.",
           "pl": "Jedyna metryka odpowiadająca na pytanie 'czy biznes zarabia?'. Wszystkie pozostałe (ATC rate, bounce, CTR) opisują zachowanie — bez GMV i Revenue nie wiesz czy strona generuje pieniądze i nie możesz ocenić efektów żadnej optymalizacji.",
@@ -71,18 +71,18 @@ export const METRIC_SECTIONS = [
       {
         "id": "overall-cr",
         "priority": 1,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Overall Conversion Rate",
           "pl": "Overall Conversion Rate",
           "de": "Gesamt-Konversionsrate"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
           "en": "The final score of the entire funnel. Purchase Intent Rate (which IS in the dashboard) is NOT the same — it measures intent, not completion. You can have 15% Purchase Intent and only 1.5% CR. Without CR you cannot see where customers are lost.",
           "pl": "Wynik końcowy całego lejka. Purchase Intent Rate (który jest w dashboardzie) to NIE to samo — mierzy intencję, nie finalizację. Można mieć 15% Purchase Intent i tylko 1.5% CR. Bez CR nie widać gdzie uciekają klienci.",
@@ -112,18 +112,18 @@ export const METRIC_SECTIONS = [
       {
         "id": "aov",
         "priority": 1,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Average Order Value (AOV)",
           "pl": "Average Order Value (AOV)",
           "de": "Durchschnittlicher Bestellwert (AOV)"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
           "en": "+10% AOV with the same number of orders = +10% Revenue with zero additional marketing spend. The dashboard has Additional Service Attach rate but without AOV the financial impact of those services is invisible.",
           "pl": "+10% AOV przy tej samej liczbie zamówień = +10% Revenue bez żadnych dodatkowych kosztów marketingowych. Dashboard ma Additional Service Attach rate, ale bez AOV nie widać efektu finansowego tych usług.",
@@ -153,21 +153,21 @@ export const METRIC_SECTIONS = [
       {
         "id": "traffic-sources",
         "priority": 2,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Traffic Sources",
           "pl": "Traffic Sources (Źródła ruchu)",
           "de": "Traffic-Quellen"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
-          "en": "Without traffic source breakdown every dashboard metric is incomplete. Bounce 49.8% may be normal (40% traffic from Paid Search) or alarming (mainly organic). Without Traffic Sources you cannot decide where to allocate the marketing budget.",
-          "pl": "Bez rozbicia na źródła każda metryka dashboardu jest niekompletna. Bounce 49.8% może być normalny (40% ruchu z Paid Search) lub katastrofalny (głównie organic). Bez Traffic Sources nie wiesz gdzie wydać budżet marketingowy.",
+          "en": "Without traffic source breakdown every dashboard metric is incomplete. A high bounce rate may be normal (e.g. 40% traffic from Paid Search) or alarming (mainly organic). Without Traffic Sources you cannot decide where to allocate the marketing budget.",
+          "pl": "Bez rozbicia na źródła każda metryka dashboardu jest niekompletna. Wysoki bounce rate może być normalny (np. 40% ruchu z Paid Search) lub katastrofalny (głównie organic). Bez Traffic Sources nie wiesz gdzie wydać budżet marketingowy.",
           "de": "Jede Kennzahl braucht Kanal-Kontext. Ohne Traffic-Quellen wissen Sie nicht, wo Marketing und Produkt gezielt ansetzen müssen."
         },
         "formula": {
@@ -194,18 +194,18 @@ export const METRIC_SECTIONS = [
       {
         "id": "cr-per-device",
         "priority": 2,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Conversion Rate per Device",
           "pl": "Conversion Rate per Device",
           "de": "Konversionsrate nach Gerät"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
           "en": "Mobile dominates traffic but without CR per device you cannot tell whether mobile also dominates sales. For home appliances: research on mobile, purchase on desktop. Without this metric you might wrongly cut the mobile budget.",
           "pl": "Mobile dominuje ruch, ale bez CR per device nie wiesz czy mobile też dominuje w sprzedaży. Dla AGD: research na mobile, zakup na desktop. Bez tej metryki możesz błędnie obciąć budżet mobile uznając go za nieefektywny.",
@@ -235,18 +235,18 @@ export const METRIC_SECTIONS = [
       {
         "id": "new-vs-returning-cr",
         "priority": 2,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "New vs Returning — Conversion Rate",
           "pl": "New vs Returning — Conversion Rate",
           "de": "Konversionsrate: Neu vs. Wiederkehrend"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
-        "tagColor": "red",
+        "tagColor": "green",
         "why": {
           "en": "The dashboard measures Returning Visitors rate but that is only half the picture. Without CR you cannot tell whether returners actually buy. If returning visitors convert 8× better — strategy should focus on retention, not acquisition.",
           "pl": "Dashboard mierzy Returning Visitors rate ale to tylko połowa obrazu. Bez CR nie wiadomo czy powracający faktycznie kupują. Jeśli powracający konwertują 8× lepiej — strategia powinna skupić się na retencji, nie akwizycji.",
@@ -276,18 +276,18 @@ export const METRIC_SECTIONS = [
       {
         "id": "cross-sell-upsell",
         "priority": 3,
-        "isNew": true,
+        "isNew": false,
         "name": {
           "en": "Cross-sell / Upsell Rate",
           "pl": "Cross-sell / Upsell Rate",
           "de": "Cross-Sell- / Upsell-Rate"
         },
         "tag": {
-          "en": "MISSING",
-          "pl": "BRAK w dashboardzie",
-          "de": "Fehlt im Dashboard"
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
         },
-        "tagColor": "red",
+        "tagColor": "blue",
         "formula": {
           "en": "Cross-sell = Orders with ≥2 different categories ÷ All × 100\nUpsell = Orders with higher-tier product ÷ All × 100",
           "pl": "Cross-sell = Zamówienia z ≥2 różnymi kategoriami ÷ Wszystkie × 100\nUpsell = Zamówienia z produktem wyższej klasy ÷ Wszystkie × 100",
@@ -335,9 +335,9 @@ export const METRIC_SECTIONS = [
           "de": "Bounce-Rate"
         },
         "tag": {
-          "en": "Present: 49.8%",
-          "pl": "Obecna: 49.8%",
-          "de": "Aktuell: 49,8 %"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
         "tagColor": "amber",
         "why": {
@@ -356,9 +356,9 @@ export const METRIC_SECTIONS = [
           "de": "Anteil der Besuche mit nur einer Seite vor dem Verlassen. Nicht jeder Bounce ist negativ (z. B. Telefonnummer gefunden). Für AGD mit Paid/Preisvergleich sind 45–60 % oft normal."
         },
         "example": {
-          "en": "For home appliances with traffic from ads and comparison sites, benchmark is 45–60%, so 49.8% is normal. Above 65–70% would be concerning.",
-          "pl": "Dla AGD przy ruchu z reklam/porównywarek benchmark to 45–60%, więc 49.8% jest w normie. Niepokojący byłby powyżej 65–70%.",
-          "de": "Bei viel Paid- und Vergleichstraffic sind 49,8 % unauffällig; dauerhaft über 65–70 % sollten Sie Landeseiten und Erwartungsmanagement prüfen."
+          "en": "For home appliances with traffic from ads and comparison sites, benchmark is 45–60%. A result in this range is within normal. Above 65–70% would be concerning.",
+          "pl": "Dla AGD przy ruchu z reklam/porównywarek benchmark to 45–60%. Wynik mieszczący się w tym zakresie jest normalny. Niepokojący byłby powyżej 65–70%.",
+          "de": "Bei viel Paid- und Vergleichstraffic sind Werte im Bereich 45–60 % unauffällig; dauerhaft über 65–70 % sollten Sie Landeseiten und Erwartungsmanagement prüfen."
         },
         "benchmark": {
           "en": "Benchmark: 45–60% OK | > 65% concerning | > 75% alarming. Always analyse with traffic source.",
@@ -376,9 +376,9 @@ export const METRIC_SECTIONS = [
           "de": "Verweildauer pro Besuch"
         },
         "tag": {
-          "en": "Present: 369 sec",
-          "pl": "Obecna: 369 sek",
-          "de": "Aktuell: 369 Sek."
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
         "tagColor": "green",
         "formula": {
@@ -387,14 +387,14 @@ export const METRIC_SECTIONS = [
           "de": "Gesamtzeit auf der Site ÷ Anzahl Besuche"
         },
         "description": {
-          "en": "Average seconds spent during one visit. 369 sec ≈ 6 minutes. Measures overall engagement — the more time spent, the more the user is drawn into browsing.",
-          "pl": "Średnia liczba sekund spędzona podczas jednej wizyty. 369 sek = ok. 6 minut. Mierzy ogólne zaangażowanie — im więcej czasu, tym bardziej użytkownik wciągnął się w przeglądanie.",
+          "en": "Average seconds spent during one visit. Measures overall engagement — the more time spent, the more the user is drawn into browsing.",
+          "pl": "Średnia liczba sekund spędzona podczas jednej wizyty. Mierzy ogólne zaangażowanie — im więcej czasu, tym bardziej użytkownik wciągnął się w przeglądanie.",
           "de": "Durchschnittliche Verweildauer pro Besuch. Längere Sessions deuten auf stärkeres Informationsbedürfnis – typisch bei techniklastigen AGD-Käufen."
         },
         "example": {
           "en": "For home appliances 6 minutes is a good result — customers read specs and compare models. General e-commerce benchmark: 3–4 min.",
           "pl": "Dla AGD 6 minut to dobry wynik — klienci czytają specyfikacje, porównują modele. Benchmark e-commerce ogólnie: 3–4 min.",
-          "de": "369 Sekunden ≈ 6 Minuten: für AGD solide, weil Spezifikationen verglichen werden. Sehr kurz kann auf Ladezeiten oder schwache PDP-Inhalte hindeuten."
+          "de": "Rund 6 Minuten sind für AGD solide, weil Kunden Spezifikationen gründlich vergleichen. Sehr kurze Sessions können auf Ladezeiten oder schwache PDP-Inhalte hindeuten."
         },
         "benchmark": {
           "en": "Good result for appliances: > 5 min. Low (< 2 min) = content quality or speed problem. Monitor alongside bounce rate.",
@@ -412,9 +412,9 @@ export const METRIC_SECTIONS = [
           "de": "Bounce-Rate (Einzelseitenbesuche)"
         },
         "tag": {
-          "en": "Present: 58% (alt. method)",
-          "pl": "Obecna: 58% (alt. metoda)",
-          "de": "Aktuell: 58 % (alt. Methode)"
+          "en": "Present (alt. method)",
+          "pl": "Obecna (alt. metoda)",
+          "de": "Aktuell (alt. Methode)"
         },
         "tagColor": "amber",
         "formula": {
@@ -423,8 +423,8 @@ export const METRIC_SECTIONS = [
           "de": "Einzelseiten-Sessions ÷ alle Sessions × 100"
         },
         "description": {
-          "en": "Alternative bounce definition based on sessions. The dashboard shows 3 bounce values (49.8%, 58%, 50.14%) — the same idea measured by different methods.",
-          "pl": "Alternatywna definicja bounce oparta na sesjach. Dashboard pokazuje 3 wartości bounce (49.8%, 58%, 50.14%) — ta sama idea mierzona różnymi metodami.",
+          "en": "Alternative bounce definition based on sessions. The dashboard may show several different bounce values — the same idea measured by different methods.",
+          "pl": "Alternatywna definicja bounce oparta na sesjach. Dashboard może pokazywać kilka różnych wartości bounce — ta sama idea mierzona różnymi metodami.",
           "de": "Alternative Bounce-Definition auf Session-Basis. Wenn das Dashboard mehrere Bounce-Werte zeigt, entstehen in Stakeholder-Meetings widersprüchliche Antworten."
         },
         "example": {
@@ -1252,14 +1252,14 @@ export const METRIC_SECTIONS = [
           "de": "Such-Verfeinerungsrate"
         },
         "tag": {
-          "en": "Present: 53.5% — too high!",
-          "pl": "Obecna: 53.5% — za wysoki!",
-          "de": "Aktuell: 53,5 % — zu hoch!"
+          "en": "Present: too high",
+          "pl": "Obecna: za wysoka",
+          "de": "Aktuell: zu hoch"
         },
         "tagColor": "red",
         "why": {
-          "en": "53.5% — more than half of searching users need to search again. A good search engine benchmark is < 35%. A poor search engine directly lowers CR. Combined with 0% zero-results it suggests the search engine returns results but they are not sufficiently relevant.",
-          "pl": "53.5% — ponad połowa użytkowników szukających musi szukać ponownie. Benchmark dobrej wyszukiwarki to < 35%. Słaba wyszukiwarka bezpośrednio obniża CR. Zestawiony z 0% zero-results sugeruje że wyszukiwarka daje wyniki ale niewystarczająco trafne.",
+          "en": "More than half of searching users need to search again. A good search engine benchmark is < 35%. A poor search engine directly lowers CR. Combined with a near-zero zero-results rate it suggests the search engine returns results but they are not sufficiently relevant.",
+          "pl": "Ponad połowa użytkowników szukających musi szukać ponownie. Benchmark dobrej wyszukiwarki to < 35%. Słaba wyszukiwarka bezpośrednio obniża CR. Zestawiony z niskim zero-results rate sugeruje że wyszukiwarka daje wyniki ale niewystarczająco trafne.",
           "de": "Schwache Suche senkt CR direkt; bei 0 % Nulltreffern liegt das Problem oft in Relevanz, nicht in leeren Ergebnissen."
         },
         "formula": {
@@ -1273,13 +1273,13 @@ export const METRIC_SECTIONS = [
           "de": "Anteil, der nach der ersten Suche erneut sucht. >50 % deutet auf schwache Trefferqualität oder unklare Synonyme hin."
         },
         "example": {
-          "en": "53.5% is too high — benchmark < 35%. Check the top 20 queries with the highest refinement rate and assess the relevance of first-page results.",
-          "pl": "53.5% to za dużo — benchmark < 35%. Sprawdź top 20 zapytań z najwyższym refinement rate i oceń trafność pierwszych wyników.",
-          "de": "53,5 % ist deutlich über dem Ziel <35 % – Top-Queries mit hoher Verfeinerung manuell bewerten."
+          "en": "A value above 50% is too high — benchmark < 35%. Check the top 20 queries with the highest refinement rate and assess the relevance of first-page results.",
+          "pl": "Wysoka wartość, powyżej 50%, jest za duża — benchmark < 35%. Sprawdź top 20 zapytań z najwyższym refinement rate i oceń trafność pierwszych wyników.",
+          "de": "Werte über 50 % liegen deutlich über dem Ziel <35 % – Top-Queries mit hoher Verfeinerungsrate manuell bewerten."
         },
         "benchmark": {
-          "en": "Combined with Search-to-PDP CTR 29.6%: those who find — find well, but more than half need to try multiple times. Problem with precision, not architecture.",
-          "pl": "Zestawienie z Search-to-PDP CTR 29.6%: ci co trafiają — trafiają dobrze, ale ponad połowa musi próbować kilka razy. Problem z precyzją, nie architekturą.",
+          "en": "Combined with Search-to-PDP CTR: those who find — find well, but more than half need to try multiple times. Problem with precision, not architecture.",
+          "pl": "Zestawienie z Search-to-PDP CTR: ci co trafiają — trafiają dobrze, ale ponad połowa musi próbować kilka razy. Problem z precyzją, nie architekturą.",
           "de": "Mit Search-to-PDP-CTR kombinieren: präzise Treffer, aber Nutzer:innen brauchen dennoch viele Versuche = Ranking/Recall-Thema."
         }
       },
@@ -1293,9 +1293,9 @@ export const METRIC_SECTIONS = [
           "de": "Such-Nulltreffer-Rate"
         },
         "tag": {
-          "en": "Present: 0.00% — excellent!",
-          "pl": "Obecna: 0.00% — świetny wynik!",
-          "de": "Aktuell: 0,00 % — exzellent!"
+          "en": "Present: excellent",
+          "pl": "Obecna: świetna",
+          "de": "Aktuell: exzellent"
         },
         "tagColor": "green",
         "formula": {
@@ -1304,13 +1304,13 @@ export const METRIC_SECTIONS = [
           "de": "Suchen ohne Treffer ÷ alle Suchen × 100"
         },
         "description": {
-          "en": "Percentage of searches that returned no results. Measures the dead zone of the search engine. 0.00% is an outstanding result.",
-          "pl": "Procent wyszukiwań które nie zwróciły żadnych wyników. Mierzy martwą strefę wyszukiwarki. 0.00% to wybitny wynik.",
+          "en": "Percentage of searches that returned no results. Measures the dead zone of the search engine. A near-zero result is outstanding.",
+          "pl": "Procent wyszukiwań które nie zwróciły żadnych wyników. Mierzy martwą strefę wyszukiwarki. Wynik bliski zeru to wybitny wynik.",
           "de": "Anteil leerer Ergebnisse. 0 % kann exzellente NLP-Abdeckung oder ein Fallback bedeuten, der immer etwas zeigt."
         },
         "example": {
-          "en": "0% = the search engine handles every query. Check: good NLP or a fallback mechanism showing anything instead of an empty page.",
-          "pl": "0% = wyszukiwarka radzi sobie z każdym zapytaniem. Sprawdź: dobry NLP czy mechanizm fallback który pokazuje cokolwiek zamiast pustej strony.",
+          "en": "A zero result = the search engine handles every query. Check: good NLP or a fallback mechanism showing anything instead of an empty page.",
+          "pl": "Wynik zerowy = wyszukiwarka radzi sobie z każdym zapytaniem. Sprawdź: dobry NLP czy mechanizm fallback który pokazuje cokolwiek zamiast pustej strony.",
           "de": "Prüfen, ob echte Trefferqualität oder „weiche“ Fallbacks die 0 % erklären."
         },
         "benchmark": {
@@ -1329,9 +1329,9 @@ export const METRIC_SECTIONS = [
           "de": "Such-zu-PDP-CTR"
         },
         "tag": {
-          "en": "Present: 29.6%",
-          "pl": "Obecna: 29.6%",
-          "de": "Aktuell: 29,6 %"
+          "en": "Present",
+          "pl": "Obecna",
+          "de": "Aktuell"
         },
         "tagColor": "green",
         "formula": {
@@ -1345,9 +1345,9 @@ export const METRIC_SECTIONS = [
           "de": "Misst, wie oft Suche direkt zu einem Produkt führt – Indikator für Trefferpräzision."
         },
         "example": {
-          "en": "29.6% — nearly one in three search sessions leads directly to a PDP. Combined with 53.5% refinement: those who find — find well.",
-          "pl": "29.6% — niemal co trzecia sesja z wyszukiwarką prowadzi bezpośrednio na PDP. Zestawiony z 53.5% refinement: ci co trafiają — trafiają dobrze.",
-          "de": "~30 % direkte PDPs bei hoher Verfeinerung: Treffer sind oft passend, aber Nutzer:innen müssen trotzdem nachschärfen."
+          "en": "Nearly one in three search sessions leads directly to a PDP. Combined with a high refinement rate: those who find — find well.",
+          "pl": "Niemal co trzecia sesja z wyszukiwarką prowadzi bezpośrednio na PDP. Zestawiony z wysokim refinement rate: ci co trafiają — trafiają dobrze.",
+          "de": "Rund jede dritte Search-Session führt direkt auf eine PDP; trotz passender Treffer müssen Nutzer:innen häufig nachschärfen."
         },
         "benchmark": {
           "en": "Increasing Search-to-PDP CTR alongside decreasing Refinement rate = search engine improvement. Monitor these two metrics as a pair.",
@@ -1682,6 +1682,361 @@ export const METRIC_SECTIONS = [
           "en": "Action plan: check price vs competition, availability (out of stock?), reviews, technical errors for this SKU.",
           "pl": "Action plan: sprawdź cenę vs konkurencja, dostępność (out of stock?), recenzje, błędy techniczne dla tego SKU.",
           "de": "Action Plan: Wettbewerbspreis, Lager, Reviews, technische Fehler je SKU."
+        }
+      }
+    ]
+  },
+  {
+    "id": "checkout",
+    "isNew": false,
+    "label": {
+      "en": "Checkout",
+      "pl": "Checkout",
+      "de": "Checkout"
+    },
+    "title": {
+      "en": "Checkout Friction & Completion",
+      "pl": "Checkout — Tarcie & Ukończenie",
+      "de": "Checkout – Reibung & Abschluss"
+    },
+    "metrics": [
+      {
+        "id": "checkout-start-rate",
+        "priority": 2,
+        "isNew": false,
+        "name": {
+          "en": "Checkout start rate",
+          "pl": "Checkout start rate",
+          "de": "Checkout-Startrate"
+        },
+        "tag": {
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
+        },
+        "tagColor": "blue",
+        "why": {
+          "en": "First gating metric for checkout quality. If checkout never starts, everything else is irrelevant — return rate, form errors, completion.",
+          "pl": "Pierwsza metryka bramkująca jakość checkout. Jeśli checkout nigdy się nie zaczyna, wszystko inne traci znaczenie — stopa powrotów, błędy formularzy, ukończenie.",
+          "de": "Erste Tormetrik für Checkout-Qualität. Startet der Checkout nie, verlieren alle anderen Checkout-Metriken ihre Aussagekraft."
+        },
+        "formula": {
+          "en": "Visits that start the checkout process ÷ visits with a cart addition × 100",
+          "pl": "Wizyty które rozpoczęły checkout ÷ wizyty z ATC × 100",
+          "de": "Besuche, die den Checkout starten ÷ Besuche mit ATC × 100"
+        },
+        "description": {
+          "en": "What percentage of visits with a cart addition actually begin the checkout process. Entry point to the final funnel stage. Low values indicate friction between basket and checkout start — unclear CTA, forced account creation, or a confusing cart page.",
+          "pl": "Jaki procent wizyt z dodaniem do koszyka faktycznie rozpoczyna proces checkout. To punkt wejścia do końcowego etapu lejka. Niska wartość wskazuje na tarcie między koszykiem a startem checkout — niejasny CTA, wymagana rejestracja, lub mylące doświadczenie koszyka.",
+          "de": "Anteil der Besuche mit Warenkorbaktion, die tatsächlich den Checkout einleiten. Niedriger Wert deutet auf Reibung zwischen Warenkorb und Checkout-Start hin – unklarer CTA, Registrierungspflicht oder verwirrendes Warenkorb-Layout."
+        },
+        "example": {
+          "en": "ATC rate 5%, Checkout start rate 3.5% → 30% of cart sessions never reach checkout. Common causes: required account creation, unexpected shipping costs revealed too late.",
+          "pl": "ATC rate 5%, Checkout start rate 3.5% → 30% sesji koszykowych nigdy nie dociera do checkout. Typowe przyczyny: obowiązkowe konto, nieoczekiwane koszty dostawy ujawnione zbyt późno.",
+          "de": "ATC-Rate 5 %, Checkout-Startrate 3,5 % → 30 % der Warenkorbsitzungen erreichen den Checkout nie. Typische Ursachen: Konto-Pflicht, unerwartet hohe Versandkosten erst spät kommuniziert."
+        },
+        "benchmark": {
+          "en": "Home appliance benchmark: 50–70% of ATC sessions start checkout. < 50% suggests strong pre-checkout friction. Analyse where users drop between cart view and checkout start.",
+          "pl": "Benchmark AGD: 50–70% sesji ATC rozpoczyna checkout. < 50% sugeruje silne tarcie. Analizuj gdzie użytkownicy wypadają między koszykiem a startem checkout.",
+          "de": "Richtwert AGD: 50–70 % der ATC-Sitzungen starten den Checkout. Unter 50 % deutet auf starke Reibung vor dem Checkout hin. Analysieren, wo Nutzer:innen zwischen Warenkorb und Checkout-Start abspringen."
+        }
+      },
+      {
+        "id": "checkout-completion-rate",
+        "priority": 2,
+        "isNew": false,
+        "name": {
+          "en": "Checkout completion rate",
+          "pl": "Checkout completion rate",
+          "de": "Checkout-Abschlussrate"
+        },
+        "tag": {
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
+        },
+        "tagColor": "blue",
+        "why": {
+          "en": "Direct measure of checkout UX quality. Compare with Checkout start rate to separate pre-checkout friction from within-checkout friction.",
+          "pl": "Bezpośrednia miara jakości UX checkout. Porównaj z Checkout start rate by oddzielić tarcie przed checkout od tarcia wewnątrz checkout.",
+          "de": "Direkter Indikator für Checkout-UX. Mit der Checkout-Startrate kombinieren, um Reibung vor vs. innerhalb des Checkouts zu trennen."
+        },
+        "formula": {
+          "en": "Visits that completed an order ÷ visits that started checkout × 100",
+          "pl": "Wizyty które ukończyły zamówienie ÷ wizyty które rozpoczęły checkout × 100",
+          "de": "Besuche mit abgeschlossener Bestellung ÷ Besuche, die den Checkout gestartet haben × 100"
+        },
+        "description": {
+          "en": "The final conversion step: what percentage of users who began checkout actually placed an order. Measures checkout effectiveness once the user has committed to buying.",
+          "pl": "Ostatni krok konwersji: jaki procent użytkowników którzy zaczęli checkout złożył zamówienie. Mierzy skuteczność procesu checkout gdy użytkownik jest już zdecydowany na zakup.",
+          "de": "Letzter Konversionsschritt: Anteil der Nutzer:innen, die nach Checkout-Start tatsächlich eine Bestellung aufgeben. Misst die Checkout-UX-Qualität in dem Moment, in dem die Kaufbereitschaft bereits besteht."
+        },
+        "example": {
+          "en": "1,000 checkout starts, 600 orders → 60% completion rate. If completion is low while start is high — the problem is inside checkout: form errors, payment issues, or unexpected costs.",
+          "pl": "1 000 startów checkout, 600 zamówień → 60% completion rate. Jeśli ukończenie niskie przy wysokim starcie — problem jest w środku checkout: błędy formularzy, problemy z płatnością, nieoczekiwane koszty.",
+          "de": "1.000 Checkout-Starts, 600 Bestellungen → 60 % Abschlussrate. Wenn Abschluss niedrig, Start aber hoch: Problem liegt im Checkout selbst – Formulare, Zahlung, unerwartete Kosten."
+        },
+        "benchmark": {
+          "en": "Good: > 65% | Average: 45–65% | Poor: < 45%. Read together with Form error rate and Cart abandonment rate — Shipping/Summary to identify the exact drop-off step.",
+          "pl": "Dobry: > 65% | Średni: 45–65% | Słaby: < 45%. Czytaj razem z Form error rate i Cart abandonment rate — Shipping/Summary by znaleźć dokładny krok odpadania.",
+          "de": "Gut: > 65 % | Mittel: 45–65 % | Schwach: < 45 %. Gemeinsam mit Formularfehlerrate und Abbruchrate Versand/Zusammenfassung lesen, um den genauen Abbruchschritt zu identifizieren."
+        }
+      },
+      {
+        "id": "cart-abandonment-shipping",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Cart abandonment rate — Shipping",
+          "pl": "Cart abandonment rate — Shipping",
+          "de": "Warenkorbabbruch – Versandschritt"
+        },
+        "tag": {
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
+        },
+        "tagColor": "blue",
+        "formula": {
+          "en": "Checkout-started visits that exit at the shipping step ÷ visits that start checkout × 100",
+          "pl": "Sesje checkout które wyszły na etapie dostawy ÷ wizyty które rozpoczęły checkout × 100",
+          "de": "Checkout-Sitzungen, die beim Versandschritt abgebrochen werden ÷ Sitzungen, die den Checkout gestartet haben × 100"
+        },
+        "description": {
+          "en": "Share of checkout-started visits that drop off at the shipping step. Measures friction at the specific point where shipping costs and delivery options are first revealed.",
+          "pl": "Udział sesji checkout które opuszczają proces na etapie dostawy/wysyłki. Mierzy tarcie konkretnie w momencie gdy ujawniane są koszty i opcje dostawy.",
+          "de": "Anteil der Checkout-Sitzungen, die beim Versand-/Lieferschritt abgebrochen werden. Misst Reibung genau an dem Punkt, an dem Versandkosten und Lieferoptionen erstmals offenbart werden."
+        },
+        "example": {
+          "en": "Abandonment spikes after showing delivery dates → customers expected faster delivery. Free shipping threshold revealed only at this step surprises users who expected it earlier.",
+          "pl": "Porzucenie rośnie po pokazaniu dat dostawy → klienci oczekiwali szybszej wysyłki. Próg darmowej dostawy ujawniony dopiero tutaj zaskakuje użytkowników.",
+          "de": "Abbruchrate steigt, wenn Lieferdaten angezeigt werden → Kund:innen erwarteten schnellere Lieferung. Kostenloser Versand erst hier kommuniziert überrascht Nutzer:innen, die das schon früher erwartet hatten."
+        },
+        "benchmark": {
+          "en": "Shipping is the most common checkout drop-off point. > 30% abandonment here is a red flag. Consider showing estimated delivery earlier (on PDP or in cart) to avoid surprises.",
+          "pl": "Dostawa to najczęstszy krok rezygnacji z checkout. > 30% porzuceń = red flag. Pokaż szacowaną dostawę wcześniej (na PDP lub w koszyku) by uniknąć niespodzianek.",
+          "de": "Versand ist der häufigste Abbruchpunkt im Checkout. Über 30 % Abbruch hier: Lieferinfos früher zeigen (PDP oder Warenkorb), um Überraschungen zu vermeiden."
+        }
+      },
+      {
+        "id": "cart-abandonment-summary",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Cart abandonment rate — Summary",
+          "pl": "Cart abandonment rate — Summary",
+          "de": "Warenkorbabbruch – Zusammenfassungsschritt"
+        },
+        "tag": {
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
+        },
+        "tagColor": "blue",
+        "formula": {
+          "en": "Visits that reach the checkout summary step but do not complete an order ÷ visits that reach the summary step × 100",
+          "pl": "Wizyty które dotarły do podsumowania checkout ale nie złożyły zamówienia ÷ wizyty które dotarły do podsumowania × 100",
+          "de": "Besuche, die den Zusammenfassungsschritt erreichen, aber keine Bestellung aufgeben ÷ Besuche, die den Zusammenfassungsschritt erreichen × 100"
+        },
+        "description": {
+          "en": "Users who see the final order summary but do not confirm. The last point before payment — abandonment here means the total price, trust elements, or payment methods are not satisfactory.",
+          "pl": "Użytkownicy którzy widzą ostateczne podsumowanie zamówienia ale nie potwierdzają. To ostatni moment przed płatnością — rezygnacja tutaj oznacza że łączna cena, elementy zaufania lub metody płatności nie spełniają oczekiwań.",
+          "de": "Nutzer:innen sehen die finale Bestellzusammenfassung, bestätigen aber nicht. Letzter Moment vor der Zahlung – Abbruch hier bedeutet, dass Gesamtpreis, Vertrauenselemente oder Zahlungsoptionen nicht überzeugen."
+        },
+        "example": {
+          "en": "High summary abandonment with low form errors: users see the total (products + shipping + VAT) and decide the price is too high, or they cannot find their preferred payment method.",
+          "pl": "Wysokie porzucenie w podsumowaniu przy niskich błędach formularzy: użytkownicy widzą łączną cenę (produkty + dostawa + VAT) i decydują że za drogo, lub nie mogą znaleźć preferowanej metody płatności.",
+          "de": "Hoher Zusammenfassungs-Abbruch bei wenig Formularfehlern: Nutzer:innen sehen den Gesamtpreis (Produkt + Versand + MwSt.) und entscheiden sich dagegen, oder sie finden ihre bevorzugte Zahlungsart nicht."
+        },
+        "benchmark": {
+          "en": "< 25% is a good target. Review the summary design: is the cost breakdown clear? Are trust badges visible? Are all major payment methods available?",
+          "pl": "< 25% to dobry cel. Sprawdź projekt podsumowania: czy zestawienie kosztów jest jasne? Czy widoczne są odznaki zaufania? Czy dostępne są wszystkie główne metody płatności?",
+          "de": "Unter 25 % ist ein gutes Ziel. Zusammenfassungs-Design prüfen: Kostenaufstellung klar? Vertrauenszeichen sichtbar? Alle wichtigen Zahlungsarten verfügbar?"
+        }
+      },
+      {
+        "id": "form-error-rate",
+        "priority": 2,
+        "isNew": false,
+        "name": {
+          "en": "Form error rate",
+          "pl": "Form error rate",
+          "de": "Formularfehlerrate"
+        },
+        "tag": {
+          "en": "Present: definition",
+          "pl": "Obecna: definicja",
+          "de": "Aktuell: Definition"
+        },
+        "tagColor": "blue",
+        "why": {
+          "en": "Unlike Error-to-intent rate (technical basket errors), Form error rate captures UX-design errors — form problems that consistently block or delay checkout completion.",
+          "pl": "W odróżnieniu od Error-to-intent rate (błędy techniczne koszyka), Form error rate wychwytuje błędy projektowania UX — problemy z formularzem które systematycznie blokują lub opóźniają ukończenie checkout.",
+          "de": "Im Gegensatz zur Fehler-zur-Intent-Rate (technische Warenkorbfehler) erfasst die Formularfehlerrate UX-Designprobleme, die den Checkout-Abschluss systematisch behindern."
+        },
+        "formula": {
+          "en": "Visits that trigger at least one checkout form error ÷ visits that start checkout × 100",
+          "pl": "Wizyty z co najmniej jednym błędem formularza checkout ÷ wizyty które rozpoczęły checkout × 100",
+          "de": "Sitzungen mit mindestens einem Checkout-Formularfehler ÷ Sitzungen, die den Checkout gestartet haben × 100"
+        },
+        "description": {
+          "en": "What percentage of checkout sessions hit at least one form validation error. Even if users recover from errors, each one reduces completion probability. High rates indicate poorly designed forms — unclear labels, confusing field requirements, or overly strict validation.",
+          "pl": "Jaki procent sesji checkout napotyka co najmniej jeden błąd walidacji formularza. Nawet jeśli użytkownicy odzyskają się po błędach, każdy zmniejsza prawdopodobieństwo ukończenia. Wysokie wartości wskazują na źle zaprojektowane formularze — niejasne etykiety, mylące wymagania pól, zbyt rygorystyczna walidacja.",
+          "de": "Anteil der Checkout-Sitzungen mit mindestens einem Validierungsfehler im Formular. Selbst wenn Nutzer:innen sich erholen, senkt jeder Fehler die Abschlusswahrscheinlichkeit. Hohe Werte deuten auf schlecht gestaltete Formulare hin – unklare Labels, verwirrende Feldanforderungen, zu strenge Validierung."
+        },
+        "example": {
+          "en": "Postcode field requiring a specific format without a hint: 15% of users trigger an error here. After adding an input mask and a clear error message: form error rate drops, completion rate rises.",
+          "pl": "Pole kodu pocztowego wymagające konkretnego formatu bez podpowiedzi: 15% użytkowników napotyka tu błąd. Po dodaniu maski wejściowej i jasnego komunikatu błędu: Form error rate spada, completion rate rośnie.",
+          "de": "PLZ-Feld ohne Format-Hinweis: 15 % der Nutzer:innen lösen hier einen Fehler aus. Nach Eingabemaske und klarer Fehlermeldung: Formularfehlerrate sinkt, Abschlussrate steigt."
+        },
+        "benchmark": {
+          "en": "< 5% is excellent | 5–15% is manageable | > 20% is a UX priority. Analyse form_error events by field name (visible in the dashboard!) to find the worst offenders.",
+          "pl": "< 5% to doskonały wynik | 5–15% do zarządzania | > 20% to priorytet UX. Analizuj zdarzenia form_error wg nazwy pola (dostępne w dashboardzie!) by znaleźć największe problemy.",
+          "de": "Unter 5 % ausgezeichnet | 5–15 % handhabbar | über 20 % UX-Priorität. form_error-Events nach Feldname auswerten (im Dashboard sichtbar!), um die größten Probleme zu finden."
+        }
+      },
+      {
+        "id": "checkout-conversion-funnel",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Checkout Conversion Funnel",
+          "pl": "Checkout Conversion Funnel",
+          "de": "Checkout-Konversionstrichter"
+        },
+        "tag": {
+          "en": "Present: funnel visualisation",
+          "pl": "Obecna: wizualizacja lejka",
+          "de": "Aktuell: Trichtervisualisierung"
+        },
+        "tagColor": "green",
+        "formula": {
+          "en": "Steps: All Visits → Cart Additions → Checkout started → Shipping step → Summary step → Order Confirmed",
+          "pl": "Kroki: Wszystkie wizyty → Dodania do koszyka → Start checkout → Dostawa → Podsumowanie → Potwierdzenie zamówienia",
+          "de": "Schritte: Alle Besuche → Warenkörbe → Checkout-Start → Versandschritt → Zusammenfassung → Bestellbestätigung"
+        },
+        "description": {
+          "en": "Full-page funnel visualisation mapping all visits from entry to confirmed order. Shows absolute visitor counts and step-by-step percentage drop-offs at each stage: All Visits → Cart Additions → Checkout Handling → Summary → Confirmation.",
+          "pl": "Wizualizacja pełnego lejka mapująca wszystkie wizyty od wejścia do potwierdzonego zamówienia. Pokazuje bezwzględne liczby i procentowe spadki na każdym etapie ścieżki checkout: Wszystkie wizyty → Cart Additions → Checkout Handling → Summary → Confirmation.",
+          "de": "Vollständige Trichtervisualisierung, die alle Besuche vom Einstieg bis zur bestätigten Bestellung abbildet. Zeigt absolute Besucherzahlen und prozentuale Drop-offs an jedem Schritt: Alle Besuche → ATC → Checkout Handling → Zusammenfassung → Bestätigung."
+        },
+        "example": {
+          "en": "100,000 visits → 5,000 cart additions → 3,500 checkout starts → 2,100 summary reached → 1,800 confirmed orders. Drop from cart to checkout start = 30% loss — biggest optimisation opportunity.",
+          "pl": "100 000 wizyt → 5 000 ATC → 3 500 start checkout → 2 100 podsumowanie → 1 800 zamówień. Spadek z koszyka do startu checkout = 30% strat — największa szansa optymalizacji.",
+          "de": "100.000 Besuche → 5.000 ATC → 3.500 Checkout-Starts → 2.100 Zusammenfassung → 1.800 Bestellungen. Drop von Warenkorb zu Checkout-Start = 30 % Verlust – größte Optimierungschance."
+        },
+        "benchmark": {
+          "en": "Read with Checkout start rate, Checkout completion rate, and step-specific abandonment rates. The funnel is the map; individual metrics are the diagnostics.",
+          "pl": "Czytaj razem z Checkout start rate, Checkout completion rate i miarami porzucenia na poszczególnych etapach. Lejek to mapa; poszczególne metryki to diagnostyka.",
+          "de": "Gemeinsam mit Checkout-Startrate, Checkout-Abschlussrate und schrittspezifischen Abbruchraten lesen. Der Trichter ist die Karte; die einzelnen Metriken liefern die Diagnose."
+        }
+      },
+      {
+        "id": "purchase-journey-plp-order",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Purchase Journey: PLP → Order",
+          "pl": "Purchase Journey: PLP → Zamówienie",
+          "de": "Kaufpfad: Produktliste → Bestellung"
+        },
+        "tag": {
+          "en": "Present: funnel visualisation",
+          "pl": "Obecna: wizualizacja lejka",
+          "de": "Aktuell: Trichtervisualisierung"
+        },
+        "tagColor": "green",
+        "formula": {
+          "en": "Steps: All Visits → PLP Sessions → PDP View → Cart Addition → Checkout Handling → Order Confirmed",
+          "pl": "Kroki: Wszystkie wizyty → Sesje PLP → Wejście na PDP → Dodanie do koszyka → Checkout → Zamówienie",
+          "de": "Schritte: Alle Besuche → PLP-Sitzungen → PDP-Aufruf → ATC → Checkout → Bestellbestätigung"
+        },
+        "description": {
+          "en": "Funnel tracing the discovery-led conversion path starting from a product listing page (PLP). Shows how many sessions beginning on a category page eventually convert to an order, and where in the PLP→PDP→ATC→Checkout→Order chain the largest drop-offs occur.",
+          "pl": "Lejek śledzący ścieżkę konwersji zaczynającą się od strony listingu produktów (PLP). Pokazuje ile sesji które zaczynają się na stronie kategorii ostatecznie konwertuje na zamówienie i gdzie w łańcuchu PLP→PDP→ATC→Checkout→Order następują największe odpadania.",
+          "de": "Trichter des entdeckungsgesteuerten Kaufpfads, der auf einer Produktlistenseite (PLP) beginnt. Zeigt, wie viele Sitzungen, die auf einer Kategorieseite starten, schließlich konvertieren, und wo im Kettenglied PLP→PDP→ATC→Checkout→Order die größten Drop-offs auftreten."
+        },
+        "example": {
+          "en": "PLP visits → 40% go to PDP → 12% add to cart → 8% start checkout → 5% complete order. The PLP-to-PDP step is often the largest optimisation opportunity.",
+          "pl": "Wizyty PLP → 40% przechodzi na PDP → 12% dodaje do koszyka → 8% rozpoczyna checkout → 5% kończy zamówienie. Etap PLP→PDP to często największa szansa optymalizacji.",
+          "de": "PLP-Besuche → 40 % auf PDP → 12 % ATC → 8 % Checkout-Start → 5 % Bestellung. Der PLP-zu-PDP-Schritt bietet oft das größte Optimierungspotenzial."
+        },
+        "benchmark": {
+          "en": "Compare with the Competence Page Journey funnel: if Competence → Order has a higher conversion rate, educational content is outperforming listing pages for high-intent users.",
+          "pl": "Porównaj z lejkiem Competence Page: jeśli Competence → Order ma wyższy wskaźnik konwersji, treści edukacyjne przewyższają strony listingu dla użytkowników z wysoką intencją.",
+          "de": "Mit dem Competence-Page-Trichter vergleichen: höhere CR dort zeigt, dass Ratgeber-Inhalte für kaufbereite Nutzer:innen effizienter sind als Listing-Seiten."
+        }
+      },
+      {
+        "id": "purchase-journey-competence-order",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Purchase Journey: Competence Page → Order",
+          "pl": "Purchase Journey: Competence → Zamówienie",
+          "de": "Kaufpfad: Ratgeber → Bestellung"
+        },
+        "tag": {
+          "en": "Present: funnel visualisation",
+          "pl": "Obecna: wizualizacja lejka",
+          "de": "Aktuell: Trichtervisualisierung"
+        },
+        "tagColor": "green",
+        "formula": {
+          "en": "Steps: All Visits → Competence Sessions → PDP View → Cart Addition → Checkout Handling → Order Confirmed",
+          "pl": "Kroki: Wszystkie wizyty → Sesje Competence → Wejście na PDP → Dodanie do koszyka → Checkout → Zamówienie",
+          "de": "Schritte: Alle Besuche → Ratgeber-Sitzungen → PDP-Aufruf → ATC → Checkout → Bestellbestätigung"
+        },
+        "description": {
+          "en": "Same funnel shape as the PLP Journey but starting from an educational guide page (Competence). Quantifies how often buyers who start in content (e.g. 'How to choose a washing machine') complete a purchase and where they drop off.",
+          "pl": "Taki sam kształt lejka jak PLP Journey ale zaczynający od strony edukacyjnej/poradnikowej (Competence). Pokazuje jak często kupujący którzy zaczynają podróż w contencie (np. 'Jak wybrać pralkę') finalizują zakup i gdzie wypadają.",
+          "de": "Gleiche Trichterform wie PLP-Journey, aber Einstieg über eine Ratgeber-/Kompetenzseite. Zeigt, wie oft Kaeufer:innen, die ihre Reise im Content beginnen (z. B. 'Waschmaschine kaufen'), einen Kauf abschließen und wo sie abspringen."
+        },
+        "example": {
+          "en": "Competence sessions → 55% PDP CTR → 18% ATC → 12% checkout start → 9% order. Higher PDP CTR and ATC than PLP path = educational content users are more purchase-ready.",
+          "pl": "Sesje Competence → 55% CTR na PDP → 18% ATC → 12% start checkout → 9% zamówienie. Wyższy PDP CTR i ATC niż ścieżka PLP = użytkownicy treści edukacyjnych są bardziej gotowi do zakupu.",
+          "de": "Ratgeber-Sitzungen → 55 % PDP-CTR → 18 % ATC → 12 % Checkout-Start → 9 % Bestellung. Höhere PDP-CTR und ATC als PLP-Pfad = Ratgeber-Nutzer:innen sind kaufbereiter."
+        },
+        "benchmark": {
+          "en": "Compare rates at each step with the PLP funnel. Higher Competence CTR justifies content investment (SEO articles, buying guides).",
+          "pl": "Porównaj wskaźniki na każdym etapie z lejkiem PLP. Wyższy CTR Competence uzasadnia inwestycję w content (artykuły SEO, poradniki zakupowe).",
+          "de": "Raten je Schritt mit dem PLP-Trichter vergleichen. Höhere Ratgeber-CTR rechtfertigt Content-Investitionen (SEO-Artikel, Kaufratgeber)."
+        }
+      },
+      {
+        "id": "delayed-purchase-table",
+        "priority": 3,
+        "isNew": false,
+        "name": {
+          "en": "Delayed Purchase after ATC — timing table",
+          "pl": "Opóźniony zakup po ATC — tabela w czasie",
+          "de": "Verzögerter Kauf nach ATC – Timing-Tabelle"
+        },
+        "tag": {
+          "en": "Present: timing table",
+          "pl": "Obecna: tabela w czasie",
+          "de": "Aktuell: Timing-Tabelle"
+        },
+        "tagColor": "green",
+        "formula": {
+          "en": "Inclusion: Cart Additions ≥ 1 AND Orders < 1 in initial visit. Return: subsequent visit with Orders ≥ 1. Columns: +1 to +13 days.",
+          "pl": "Inkluzja: Cart Additions ≥ 1 ORAZ Orders < 1 w pierwszej wizycie. Powrót: kolejna wizyta z Orders ≥ 1. Kolumny: +1 do +13 dni.",
+          "de": "Einschluss: Cart Additions ≥ 1 UND Orders < 1 beim ersten Besuch. Rückkehr: Folgebesuch mit Orders ≥ 1. Spalten: +1 bis +13 Tage."
+        },
+        "description": {
+          "en": "Timing table showing when visitors who added to cart without purchasing eventually return and buy — distributed over +1 to +13 days. Complements the 'Return and buy after ATC no order rate' KPI by revealing timing dynamics. Note: this visualisation does not exclude same-day returns or additional ATC actions, so exact numbers may differ from the KPI.",
+          "pl": "Tabela pokazująca kiedy odwiedzający którzy dodali do koszyka bez zakupu ostatecznie wracają i kupują — rozłożona na +1 do +13 dni. Uzupełnia KPI 'Return and buy after ATC no order rate' ujawniając dynamikę czasową. Uwaga: wizualizacja nie wyklucza powrotów w tym samym dniu ani dodatkowych akcji ATC, więc dokładne liczby mogą się różnić od KPI.",
+          "de": "Timing-Tabelle, die zeigt, wann Besucher:innen, die in den Warenkorb gelegt haben ohne zu kaufen, zurückkehren und kaufen - aufgeteilt über +1 bis +13 Tage. Ergänzt den KPI 'Rückkehr und Kauf nach ATC ohne Bestellung' um zeitliche Dynamik. Hinweis: Die Visualisierung schließt keine same-day-Rückkehrer oder zusätzliche ATC-Aktionen aus, daher können genaue Zahlen vom KPI abweichen."
+        },
+        "example": {
+          "en": "Many Day+1 recoveries → timely cart abandonment email is working. Flat recovery curve after Day+2 → a single reminder captures most of the opportunity. Spike at Day+7 → weekly promotion or reminder cycle is effective.",
+          "pl": "Dużo odzyskań Dzień+1 → działa terminowy email z porzuconym koszykiem. Płaska krzywa po Dniu+2 → jeden reminder wychwytuje większość szans. Skok w Dniu+7 → działa tygodniowy cykl promocji.",
+          "de": "Viele Rückkehrer am Tag+1 → zeitgerechte Abbruch-E-Mail funktioniert. Flache Kurve nach Tag+2 → eine Reminder-E-Mail reicht. Spitze bei Tag+7 → wöchentlicher Aktions- oder Erinnerungszyklus wirkt."
+        },
+        "benchmark": {
+          "en": "Use to calibrate cart abandonment email cadence (1h, 24h, 7 days is standard). If Day+1 recovery is high but Day+7 is low, a single email may suffice. If recoveries are spread evenly, a multi-touch flow is warranted.",
+          "pl": "Użyj do kalibracji kadencji emaili porzucenia (1h, 24h, 7 dni to standard). Jeśli odzyskanie Dzień+1 wysokie ale Dzień+7 niskie, jeden email może wystarczyć. Jeśli odzyskania rozłożone równomiernie, konieczny jest wielodotykowy flow.",
+          "de": "Zur Kalibrierung der Abbruch-E-Mail-Kadenz nutzen (1h / 24h / 7 Tage ist Standard). Hohe Rückkehr an Tag+1, niedrig ab Tag+7: eine E-Mail kann genügen. Gleichmäßige Verteilung: Multi-Touch-Flow empfehlenswert."
         }
       }
     ]

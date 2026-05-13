@@ -52,6 +52,15 @@ const slugOrder = [
   "cart-view-ratio",
   "return-buy-same-visit",
   "most-abandoned-products",
+  "checkout-start-rate",
+  "checkout-completion-rate",
+  "cart-abandonment-shipping",
+  "cart-abandonment-summary",
+  "form-error-rate",
+  "checkout-conversion-funnel",
+  "purchase-journey-plp-order",
+  "purchase-journey-competence-order",
+  "delayed-purchase-table",
 ];
 
 const sectionMap = {
@@ -62,6 +71,7 @@ const sectionMap = {
   pdp: "pdp",
   src: "search",
   cart: "cart",
+  chk: "checkout",
 };
 
 const dePath = path.join(__dirname, "de-locale.json");
@@ -123,19 +133,21 @@ function deSectionLabel(id) {
     pdp: "Produktseite",
     search: "Suche",
     cart: "Warenkorb & Kauf",
+    checkout: "Checkout",
   };
   return map[id] || id;
 }
 
 function deSectionTitle(id) {
   const map = {
-    business: "Fehlende Business-KPIs",
+    business: "Business-KPIs",
     engagement: "Nutzer-Engagement",
     users: "Nutzer & Traffic",
     discovery: "Produktentdeckung & Navigation",
     pdp: "Produktseite (PDP)",
     search: "Such-Erlebnis",
     cart: "Warenkorb & Kauf",
+    checkout: "Checkout – Reibung & Abschluss",
   };
   return map[id] || id;
 }

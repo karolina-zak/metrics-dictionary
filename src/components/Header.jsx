@@ -1,88 +1,150 @@
-export default function Header({ t, lang, setLang, appConfig, badgeText, dashboardUrl }) {
+const ctaBase = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  fontSize: 13,
+  fontWeight: 600,
+  padding: "8px 14px",
+  borderRadius: "var(--radius-sm)",
+  border: "1px solid var(--color-text)",
+  whiteSpace: "nowrap",
+};
+
+const langBtn = {
+  padding: "6px 10px",
+  fontSize: 12,
+  fontWeight: 600,
+  cursor: "pointer",
+  border: "none",
+  borderRadius: "var(--radius-sm)",
+  background: "transparent",
+  color: "var(--color-text-muted)",
+};
+
+/** Delikatna separacja paska języka od treści nagłówka (nie „pusty” pasek). */
+const LANG_ROW_SEPARATOR = "1px solid rgba(148, 163, 184, 0.45)";
+
+const LANG_FULL = { en: "English", pl: "Polski", de: "Deutsch" };
+
+export default function Header({ t, lang, setLang, dashboardHref }) {
   return (
     <header
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        gap: "12px 16px",
-        padding: "16px 0 12px",
+        marginBottom: 20,
         borderBottom: "1px solid var(--color-border)",
-        marginBottom: 16,
       }}
     >
-      <div style={{ flex: "1 1 220px", minWidth: 0 }}>
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
-          <h1 style={{ margin: 0, fontSize: "clamp(1.25rem, 3vw, 1.6rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-            {t.appTitle}
-          </h1>
-          <span
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: "var(--color-text-muted)",
-              background: "var(--color-surface)",
-              border: "1px solid var(--color-border-strong)",
-              borderRadius: "var(--radius-pill)",
-              padding: "3px 10px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {badgeText}
-          </span>
-        </div>
-        <p style={{ margin: "6px 0 0", fontSize: 13, color: "var(--color-text-muted)", maxWidth: "52ch" }}>{t.appSubtitle}</p>
-      </div>
-
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginLeft: "auto" }}>
-        <a
-          href={dashboardUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            fontSize: 13,
-            fontWeight: 600,
-            textDecoration: "none",
-            padding: "8px 14px",
-            borderRadius: "var(--radius-sm)",
-            background: "var(--color-text)",
-            color: "var(--color-surface)",
-            border: "1px solid var(--color-text)",
-          }}
-        >
-          {t.openDashboard} →
-        </a>
-        <div
-          role="group"
-          aria-label="Language"
-          style={{
-            display: "flex",
-            border: "1px solid var(--color-border-strong)",
-            borderRadius: "var(--radius-pill)",
-            overflow: "hidden",
-          }}
-        >
+      {/* Sekcja 1: tylko język — prawy górny róg, linia pod spodem */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          paddingTop: 10,
+          paddingBottom: 10,
+          borderBottom: LANG_ROW_SEPARATOR,
+        }}
+      >
+        <div role="group" aria-label={t.langSwitcherLabel} style={{ display: "flex", alignItems: "center", gap: 2 }}>
           {["en", "pl", "de"].map((l) => (
             <button
               key={l}
               type="button"
+              lang={l}
+              aria-label={LANG_FULL[l]}
+              aria-pressed={lang === l}
               onClick={() => setLang(l)}
               style={{
-                padding: "7px 12px",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: "pointer",
-                border: "none",
-                background: lang === l ? "var(--color-text)" : "transparent",
-                color: lang === l ? "var(--color-surface)" : "var(--color-text-muted)",
+                ...langBtn,
+                background: lang === l ? "var(--color-bg)" : "transparent",
+                color: lang === l ? "var(--color-text)" : "var(--color-text-muted)",
+                boxShadow: lang === l ? "inset 0 0 0 1px var(--color-border-strong)" : "none",
               }}
             >
               {l.toUpperCase()}
             </button>
           ))}
+        </div>
+      </div>
+
+      {/* Sekcja 2: headline + opis (lewo), CTA (prawo), wyrównanie do góry */}
+      <div
+        className="header-main-row"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) auto",
+          gap: "16px 20px",
+          alignItems: "start",
+          paddingTop: 16,
+          paddingBottom: 18,
+        }}
+      >
+        <div style={{ minWidth: 0, textAlign: "left" }}>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "clamp(1.2rem, 2.8vw, 1.55rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.2,
+            }}
+          >
+            {t.appTitle}
+          </h1>
+          <p
+            style={{
+              margin: "8px 0 0",
+              fontSize: 14,
+              color: "var(--color-text-muted)",
+              lineHeight: 1.45,
+              maxWidth: "62ch",
+            }}
+          >
+            {t.appSubtitle}
+          </p>
+        </div>
+
+        <div
+          className="header-cta-wrap"
+          style={{
+            justifySelf: "end",
+            flexShrink: 0,
+            paddingTop: 2,
+          }}
+        >
+          {dashboardHref ? (
+            <a
+              href={dashboardHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t.openDashboard} — ${t.openDashboardAriaSuffix}`}
+              style={{
+                ...ctaBase,
+                textDecoration: "none",
+                background: "var(--color-text)",
+                color: "var(--color-surface)",
+              }}
+            >
+              {t.openDashboard} →
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title={t.openDashboardUnavailable}
+              aria-label={t.openDashboardUnavailable}
+              style={{
+                ...ctaBase,
+                cursor: "not-allowed",
+                opacity: 0.55,
+                background: "var(--color-surface)",
+                color: "var(--color-text-muted)",
+                borderColor: "var(--color-border-strong)",
+              }}
+            >
+              {t.openDashboard} →
+            </button>
+          )}
         </div>
       </div>
     </header>
