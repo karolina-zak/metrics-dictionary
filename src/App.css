@@ -48,25 +48,25 @@
    * Shared control rhythm — nav pills / chips / fields (breadcrumb & gallery-inspired density).
    * Ref: layout inspired by Navbar Gallery breadcrumbs treatment.
    */
-  --ui-nav-font-size: clamp(13px, 1.2vw, 14px);
+  --ui-nav-font-size: 14px;
   --ui-nav-font-weight: 600;
   --ui-pill-pad-block: clamp(8px, 1vw, 10px);
   --ui-pill-pad-inline: clamp(13px, 1.45vw, 17px);
   --ui-pill-gap: 8px;
   --ui-pill-stack-gap: 8px;
-  --ui-micro-pill-font-size: clamp(11px, 1.05vw, 12px);
+  --ui-micro-pill-font-size: 12px;
   --ui-micro-pill-pad-block: 3px;
   --ui-micro-pill-pad-inline: 10px;
-  --ui-caps-label-font-size: clamp(11px, 1.06vw, 12px);
+  --ui-caps-label-font-size: 12px;
   --ui-caps-label-tracking: 0.07em;
   --ui-field-font-size: clamp(13px, 1.18vw, 14px);
   --ui-field-pad-block: 11px;
   --ui-field-pad-inline: 14px;
   --ui-body-secondary-size: clamp(12px, 1.14vw, 13px);
-  --ui-tag-font-size: clamp(11px, 1.04vw, 12px);
+  --ui-tag-font-size: 12px;
   --ui-tag-pad-block: 4px;
   --ui-tag-pad-inline: 11px;
-  --ui-tab-icon-size: 20px;
+  --ui-tab-icon-size: 16px;
   /* Sidebar category tabs — symmetric inset, matches expanded + collapsed rail */
   --ui-sidebar-tab-pad: clamp(9px, 1vw, 12px);
   /* Selected category tab — secondary, not primary CTA fill */
@@ -231,7 +231,7 @@ input:focus:not(:focus-visible) {
   z-index: 40;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: clip;
   box-sizing: border-box;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);

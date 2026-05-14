@@ -20,6 +20,26 @@ npm run preview
 
 The `dist/` folder is suitable for static hosting (e.g. **Netlify**). `public/_redirects` contains a SPA fallback rule.
 
+## Deploy on Netlify (first time)
+
+1. Push this repository to GitHub (or GitLab / Bitbucket supported by Netlify).
+2. In [Netlify](https://app.netlify.com): **Add new site** → **Import an existing project** → authorize Git → pick the repo.
+3. Netlify reads [`netlify.toml`](netlify.toml): **Build command** `npm run build`, **Publish directory** `dist`. No extra env vars are required for a static build.
+4. Under **Site configuration → Build & deploy → Continuous deployment**, set **Production branch** to the branch you want live (e.g. `main` or `dev`).
+5. After the first deploy succeeds, optional: **Domain management** → add a custom domain and enable HTTPS (automatic on Netlify).
+
+## Update the live site later
+
+Every **push** to the branch Netlify watches for production triggers a new build and deploy (usually within 1–3 minutes). Workflow:
+
+```bash
+git add .
+git commit -m "Describe the change"
+git push origin main   # or: git push origin dev
+```
+
+If you change metrics data, run `node scripts/gen-metrics.mjs` (or `npm run build`, which runs the generator) before committing so `src/data/metrics.js` stays in sync. Bump `APP_CONFIG` in `src/App.jsx` when you release a content version (see below).
+
 ## Update metrics (non-technical)
 
 1. **English & Polish** content is generated from `scripts/metricsData.source.ts` (same structure as before: `SECTIONS` with `n`, `tag`, `f`, `d`, `e`, `b`, `why`, `p`, `tc`, etc.).
@@ -41,7 +61,7 @@ The `dist/` folder is suitable for static hosting (e.g. **Netlify**). `public/_r
    git push
    ```
 
-Netlify (or similar) can auto-deploy from `main` within a few minutes.
+With continuous deployment enabled, Netlify rebuilds after each push to your chosen production branch (see **Deploy on Netlify** above).
 
 ## Change the dashboard URL
 

@@ -350,6 +350,7 @@ export default function App() {
       </a>
 
       <aside
+        aria-label={t.sidebarAriaLabel}
         className={
           pinnedCategorySidebar
             ? sidebarCollapsed

@@ -33,6 +33,7 @@ export default function TabBar({
   const focusTabIndex = useCallback((index) => {
     const el = tabRefs.current[index];
     el?.focus();
+    el?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, []);
 
   const selectByIndex = useCallback(
@@ -137,7 +138,7 @@ export default function TabBar({
             title={hideSupportingText ? hoverTip : undefined}
             onClick={() => onSelect(tab.id)}
             onKeyDown={(e) => onTabKeyDown(e, index)}
-            aria-label={`${tab.label}, ${tab.count}`}
+            aria-label={`${tab.label} (${tab.count})`}
             style={{
               fontSize: "var(--ui-nav-font-size)",
               fontWeight: "var(--ui-nav-font-weight)",
@@ -171,7 +172,7 @@ export default function TabBar({
               <span
                 className="material-symbols-outlined tab-category-icon"
                 aria-hidden="true"
-                style={hideSupportingText ? { fontSize: 22 } : undefined}
+                style={hideSupportingText ? { fontSize: 16 } : undefined}
               >
                 {iconGlyph}
               </span>
